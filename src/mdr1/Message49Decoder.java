@@ -8,7 +8,7 @@ package mdr1;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
-import mktdata.MDIncrementalRefreshDailyStatistics33;
+import mktdata.MDIncrementalRefreshDailyStatistics49;
 import mktdata.MatchEventIndicator;
 import mktdata.SettlPriceType;
 import uk.co.real_logic.sbe.codec.java.DirectBuffer;
@@ -17,19 +17,19 @@ import uk.co.real_logic.sbe.codec.java.DirectBuffer;
  *
  * @author Administrator
  */
-class Message33Decoder 
+class Message49Decoder 
 {
     private final int template = 33;
     private final boolean option;
     private String tableName;
-    private final MDIncrementalRefreshDailyStatistics33 marketData = new MDIncrementalRefreshDailyStatistics33();
+    private final MDIncrementalRefreshDailyStatistics49 marketData = new MDIncrementalRefreshDailyStatistics49();
     private final byte[] message;
     private final int bufferOffset;
     private final int actingBlockLength;
     private final int actingVersion;
     private String MEI, SPT;
     
-    public Message33Decoder(byte[] message, int bufferOffset, int actingBlockLength, int actingVersion, boolean option) 
+    public Message49Decoder(byte[] message, int bufferOffset, int actingBlockLength, int actingVersion, boolean option) 
     {
        this.message = message;
        this.bufferOffset = bufferOffset;
@@ -73,7 +73,7 @@ class Message33Decoder
        if(event.Reserved()){MEI = "1";}else{MEI = "0";}
        colData.add(sbmd.append(MEI));
        
-       for(final MDIncrementalRefreshDailyStatistics33.NoMDEntries noMDEntries : marketData.noMDEntries())
+       for(final MDIncrementalRefreshDailyStatistics49.NoMDEntries noMDEntries : marketData.noMDEntries())
        {
             colData.add(pf.formatPrice(noMDEntries.mDEntryPx().mantissa(), noMDEntries.mDEntryPx().exponent()));
             colData.add(noMDEntries.mDEntrySize());          

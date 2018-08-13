@@ -9,7 +9,7 @@ import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
-import mktdata.MDInstrumentDefinitionFuture27;
+import mktdata.MDInstrumentDefinitionFuture54;
 import mktdata.MatchEventIndicator;
 import mktdata.SettlPriceType;
 import mktdata.InstAttribValue;
@@ -19,11 +19,11 @@ import uk.co.real_logic.sbe.codec.java.DirectBuffer;
  *
  * @author Administrator
  */
-class Message27Decoder 
+class Message54Decoder 
 {
     private final boolean option;
     private String tableName;
-    private final MDInstrumentDefinitionFuture27 marketData = new MDInstrumentDefinitionFuture27();
+    private final MDInstrumentDefinitionFuture54 marketData = new MDInstrumentDefinitionFuture54();
     private final byte[] message;
     private final int bufferOffset;
     private final int actingBlockLength;
@@ -35,7 +35,7 @@ class Message27Decoder
     private String SPT;
     private String IAV;
 
-    public Message27Decoder(byte[] message, int bufferOffset, int actingBlockLength, int actingVersion, boolean option) 
+    public Message54Decoder(byte[] message, int bufferOffset, int actingBlockLength, int actingVersion, boolean option) 
     {
        this.message = message;
        this.bufferOffset = bufferOffset;
@@ -92,38 +92,38 @@ class Message27Decoder
        colData.add(marketData.underlyingProduct());
        
   try {
-       colData.add(new String(message, 0, marketData.getSecurityExchange(message, 0),MDInstrumentDefinitionFuture27.securityExchangeCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getSecurityGroup(message, 0),MDInstrumentDefinitionFuture27.securityGroupCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getAsset(message, 0),MDInstrumentDefinitionFuture27.assetCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getSymbol(message, 0),MDInstrumentDefinitionFuture27.symbolCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSecurityExchange(message, 0),MDInstrumentDefinitionFuture54.securityExchangeCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSecurityGroup(message, 0),MDInstrumentDefinitionFuture54.securityGroupCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getAsset(message, 0),MDInstrumentDefinitionFuture54.assetCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSymbol(message, 0),MDInstrumentDefinitionFuture54.symbolCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
   
        colData.add(marketData.securityID()); 
        
   try {
        colData.add(new String(message, 0, marketData.getSecurityIDSource(message, 0, message.length)));
-       colData.add(new String(message, 0, marketData.getSecurityType(message, 0),MDInstrumentDefinitionFuture27.securityTypeCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getCFICode(message, 0), MDInstrumentDefinitionFuture27.cFICodeCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSecurityType(message, 0),MDInstrumentDefinitionFuture54.securityTypeCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getCFICode(message, 0), MDInstrumentDefinitionFuture54.cFICodeCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
   
        StringBuilder sb = new StringBuilder();
        colData.add(sb.append(marketData.maturityMonthYear().year()).append(marketData.maturityMonthYear().month()));
        
   try {
-       colData.add(new String(message, 0, marketData.getCurrency(message, 0), MDInstrumentDefinitionFuture27.currencyCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getSettlCurrency(message, 0),MDInstrumentDefinitionFuture27.settlCurrencyCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getCurrency(message, 0), MDInstrumentDefinitionFuture54.currencyCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSettlCurrency(message, 0),MDInstrumentDefinitionFuture54.settlCurrencyCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
   
        colData.add(marketData.matchAlgorithm());
@@ -136,11 +136,11 @@ class Message27Decoder
        colData.add(marketData.priceDisplayFormat());
        
   try {
-       colData.add(new String(message, 0, marketData.getUnitOfMeasure(message, 0),MDInstrumentDefinitionFuture27.unitOfMeasureCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getUnitOfMeasure(message, 0),MDInstrumentDefinitionFuture54.unitOfMeasureCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
        colData.add(pf.formatPrice(marketData.unitOfMeasureQty().mantissa(), marketData.unitOfMeasureQty().exponent()));
        colData.add(pf.formatPrice(marketData.tradingReferencePrice().mantissa(), marketData.tradingReferencePrice().exponent()));
@@ -174,7 +174,7 @@ class Message27Decoder
        colData.add(pf.formatPrice(marketData.minPriceIncrementAmount().mantissa(), marketData.minPriceIncrementAmount().exponent()));
        colData.add(marketData.userDefinedInstrument());
        
-       for(final MDInstrumentDefinitionFuture27.NoEvents noEvents : marketData.noEvents())
+       for(final MDInstrumentDefinitionFuture54.NoEvents noEvents : marketData.noEvents())
        {
            colData.add(noEvents.eventType());          
            colData.add(noEvents.eventTime()); 
@@ -278,38 +278,38 @@ class Message27Decoder
        colData.add(marketData.underlyingProduct());
        
   try {
-       colData.add(new String(message, 0, marketData.getSecurityExchange(message, 0),MDInstrumentDefinitionFuture27.securityExchangeCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getSecurityGroup(message, 0),MDInstrumentDefinitionFuture27.securityGroupCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getAsset(message, 0),MDInstrumentDefinitionFuture27.assetCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getSymbol(message, 0),MDInstrumentDefinitionFuture27.symbolCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSecurityExchange(message, 0),MDInstrumentDefinitionFuture54.securityExchangeCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSecurityGroup(message, 0),MDInstrumentDefinitionFuture54.securityGroupCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getAsset(message, 0),MDInstrumentDefinitionFuture54.assetCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSymbol(message, 0),MDInstrumentDefinitionFuture54.symbolCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
   
        colData.add(marketData.securityID()); 
        
   try {
        colData.add(new String(message, 0, marketData.getSecurityIDSource(message, 0, message.length)));
-       colData.add(new String(message, 0, marketData.getSecurityType(message, 0),MDInstrumentDefinitionFuture27.securityTypeCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getCFICode(message, 0), MDInstrumentDefinitionFuture27.cFICodeCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSecurityType(message, 0),MDInstrumentDefinitionFuture54.securityTypeCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getCFICode(message, 0), MDInstrumentDefinitionFuture54.cFICodeCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
   
        StringBuilder sb = new StringBuilder();
        colData.add(sb.append(marketData.maturityMonthYear().year()).append(marketData.maturityMonthYear().month()));
        
   try {
-       colData.add(new String(message, 0, marketData.getCurrency(message, 0), MDInstrumentDefinitionFuture27.currencyCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getSettlCurrency(message, 0),MDInstrumentDefinitionFuture27.settlCurrencyCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getCurrency(message, 0), MDInstrumentDefinitionFuture54.currencyCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSettlCurrency(message, 0),MDInstrumentDefinitionFuture54.settlCurrencyCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
   
        colData.add(marketData.matchAlgorithm());
@@ -322,11 +322,11 @@ class Message27Decoder
        colData.add(marketData.priceDisplayFormat());
        
   try {
-       colData.add(new String(message, 0, marketData.getUnitOfMeasure(message, 0),MDInstrumentDefinitionFuture27.unitOfMeasureCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getUnitOfMeasure(message, 0),MDInstrumentDefinitionFuture54.unitOfMeasureCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
        colData.add(pf.formatPrice(marketData.unitOfMeasureQty().mantissa(), marketData.unitOfMeasureQty().exponent()));
        colData.add(pf.formatPrice(marketData.tradingReferencePrice().mantissa(), marketData.tradingReferencePrice().exponent()));
@@ -360,21 +360,21 @@ class Message27Decoder
        colData.add(pf.formatPrice(marketData.minPriceIncrementAmount().mantissa(), marketData.minPriceIncrementAmount().exponent()));
        colData.add(marketData.userDefinedInstrument());
        
-       for(final MDInstrumentDefinitionFuture27.NoEvents noEvents : marketData.noEvents())
+       for(final MDInstrumentDefinitionFuture54.NoEvents noEvents : marketData.noEvents())
        {
            noEvents.eventType();          
            noEvents.eventTime();
        }
        
-       for(final MDInstrumentDefinitionFuture27.NoMDFeedTypes noMDFeedTypes : marketData.noMDFeedTypes())
+       for(final MDInstrumentDefinitionFuture54.NoMDFeedTypes noMDFeedTypes : marketData.noMDFeedTypes())
        {
            try 
            {          
-               colData.add(new String(message, 0, noMDFeedTypes.getMDFeedType(message, 0),MDInstrumentDefinitionFuture27.NoMDFeedTypes.mDFeedTypeCharacterEncoding().trim()));
+               colData.add(new String(message, 0, noMDFeedTypes.getMDFeedType(message, 0),MDInstrumentDefinitionFuture54.NoMDFeedTypes.mDFeedTypeCharacterEncoding().trim()));
            } 
            catch (UnsupportedEncodingException ex) 
            {
-               System.out.println("UnsupportedEncodingException template 27" + ex);
+               System.out.println("UnsupportedEncodingException template 54" + ex);
            }
            colData.add(noMDFeedTypes.marketDepth()); 
            
@@ -477,38 +477,38 @@ class Message27Decoder
        colData.add(marketData.underlyingProduct());
        
   try {
-       colData.add(new String(message, 0, marketData.getSecurityExchange(message, 0),MDInstrumentDefinitionFuture27.securityExchangeCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getSecurityGroup(message, 0),MDInstrumentDefinitionFuture27.securityGroupCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getAsset(message, 0),MDInstrumentDefinitionFuture27.assetCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getSymbol(message, 0),MDInstrumentDefinitionFuture27.symbolCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSecurityExchange(message, 0),MDInstrumentDefinitionFuture54.securityExchangeCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSecurityGroup(message, 0),MDInstrumentDefinitionFuture54.securityGroupCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getAsset(message, 0),MDInstrumentDefinitionFuture54.assetCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSymbol(message, 0),MDInstrumentDefinitionFuture54.symbolCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
   
        colData.add(marketData.securityID()); 
        
   try {
        colData.add(new String(message, 0, marketData.getSecurityIDSource(message, 0, message.length)));
-       colData.add(new String(message, 0, marketData.getSecurityType(message, 0),MDInstrumentDefinitionFuture27.securityTypeCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getCFICode(message, 0), MDInstrumentDefinitionFuture27.cFICodeCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSecurityType(message, 0),MDInstrumentDefinitionFuture54.securityTypeCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getCFICode(message, 0), MDInstrumentDefinitionFuture54.cFICodeCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
   
        StringBuilder s = new StringBuilder();
        colData.add(s.append(marketData.maturityMonthYear().year()).append(marketData.maturityMonthYear().month()));
        
   try {
-       colData.add(new String(message, 0, marketData.getCurrency(message, 0), MDInstrumentDefinitionFuture27.currencyCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getSettlCurrency(message, 0),MDInstrumentDefinitionFuture27.settlCurrencyCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getCurrency(message, 0), MDInstrumentDefinitionFuture54.currencyCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSettlCurrency(message, 0),MDInstrumentDefinitionFuture54.settlCurrencyCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
   
        colData.add(marketData.matchAlgorithm());
@@ -521,11 +521,11 @@ class Message27Decoder
        colData.add(marketData.priceDisplayFormat());
        
   try {
-       colData.add(new String(message, 0, marketData.getUnitOfMeasure(message, 0),MDInstrumentDefinitionFuture27.unitOfMeasureCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getUnitOfMeasure(message, 0),MDInstrumentDefinitionFuture54.unitOfMeasureCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
        colData.add(pf.formatPrice(marketData.unitOfMeasureQty().mantissa(), marketData.unitOfMeasureQty().exponent()));
        colData.add(pf.formatPrice(marketData.tradingReferencePrice().mantissa(), marketData.tradingReferencePrice().exponent()));
@@ -559,26 +559,26 @@ class Message27Decoder
        colData.add(pf.formatPrice(marketData.minPriceIncrementAmount().mantissa(), marketData.minPriceIncrementAmount().exponent()));
        colData.add(marketData.userDefinedInstrument());
        
-       for(final MDInstrumentDefinitionFuture27.NoEvents noEvents : marketData.noEvents())
+       for(final MDInstrumentDefinitionFuture54.NoEvents noEvents : marketData.noEvents())
        {
            noEvents.eventType();          
            noEvents.eventTime();
        }
        
-       for(final MDInstrumentDefinitionFuture27.NoMDFeedTypes noMDFeedTypes : marketData.noMDFeedTypes())
+       for(final MDInstrumentDefinitionFuture54.NoMDFeedTypes noMDFeedTypes : marketData.noMDFeedTypes())
        {
            try 
            {          
-               String na = new String(message, 0, noMDFeedTypes.getMDFeedType(message, 0),MDInstrumentDefinitionFuture27.NoMDFeedTypes.mDFeedTypeCharacterEncoding().trim());
+               String na = new String(message, 0, noMDFeedTypes.getMDFeedType(message, 0),MDInstrumentDefinitionFuture54.NoMDFeedTypes.mDFeedTypeCharacterEncoding().trim());
            } 
            catch (UnsupportedEncodingException ex) 
            {
-               System.out.println("UnsupportedEncodingException template 27" + ex);
+               System.out.println("UnsupportedEncodingException template 54" + ex);
            }
            noMDFeedTypes.marketDepth();
        }
        
-       for(final MDInstrumentDefinitionFuture27.NoInstAttrib noInstAttrib : marketData.noInstAttrib())
+       for(final MDInstrumentDefinitionFuture54.NoInstAttrib noInstAttrib : marketData.noInstAttrib())
        {
            colData.add(noInstAttrib.instAttribType());
            
@@ -724,38 +724,38 @@ class Message27Decoder
        colData.add(marketData.underlyingProduct());
        
   try {
-       colData.add(new String(message, 0, marketData.getSecurityExchange(message, 0),MDInstrumentDefinitionFuture27.securityExchangeCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getSecurityGroup(message, 0),MDInstrumentDefinitionFuture27.securityGroupCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getAsset(message, 0),MDInstrumentDefinitionFuture27.assetCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getSymbol(message, 0),MDInstrumentDefinitionFuture27.symbolCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSecurityExchange(message, 0),MDInstrumentDefinitionFuture54.securityExchangeCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSecurityGroup(message, 0),MDInstrumentDefinitionFuture54.securityGroupCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getAsset(message, 0),MDInstrumentDefinitionFuture54.assetCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSymbol(message, 0),MDInstrumentDefinitionFuture54.symbolCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
   
        colData.add(marketData.securityID()); 
        
   try {
        colData.add(new String(message, 0, marketData.getSecurityIDSource(message, 0, message.length)));
-       colData.add(new String(message, 0, marketData.getSecurityType(message, 0),MDInstrumentDefinitionFuture27.securityTypeCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getCFICode(message, 0), MDInstrumentDefinitionFuture27.cFICodeCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSecurityType(message, 0),MDInstrumentDefinitionFuture54.securityTypeCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getCFICode(message, 0), MDInstrumentDefinitionFuture54.cFICodeCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
   
        StringBuilder s = new StringBuilder();
        colData.add(s.append(marketData.maturityMonthYear().year()).append(marketData.maturityMonthYear().month()));
        
   try {
-       colData.add(new String(message, 0, marketData.getCurrency(message, 0), MDInstrumentDefinitionFuture27.currencyCharacterEncoding().trim()));
-       colData.add(new String(message, 0, marketData.getSettlCurrency(message, 0),MDInstrumentDefinitionFuture27.settlCurrencyCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getCurrency(message, 0), MDInstrumentDefinitionFuture54.currencyCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getSettlCurrency(message, 0),MDInstrumentDefinitionFuture54.settlCurrencyCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
   
        colData.add(marketData.matchAlgorithm());
@@ -768,11 +768,11 @@ class Message27Decoder
        colData.add(marketData.priceDisplayFormat());
        
   try {
-       colData.add(new String(message, 0, marketData.getUnitOfMeasure(message, 0),MDInstrumentDefinitionFuture27.unitOfMeasureCharacterEncoding().trim()));
+       colData.add(new String(message, 0, marketData.getUnitOfMeasure(message, 0),MDInstrumentDefinitionFuture54.unitOfMeasureCharacterEncoding().trim()));
       } 
   catch (UnsupportedEncodingException ex) 
       {
-          System.out.println("UnsupportedEncodingException template 27" + ex);
+          System.out.println("UnsupportedEncodingException template 54" + ex);
       }
        colData.add(pf.formatPrice(marketData.unitOfMeasureQty().mantissa(), marketData.unitOfMeasureQty().exponent()));
        colData.add(pf.formatPrice(marketData.tradingReferencePrice().mantissa(), marketData.tradingReferencePrice().exponent()));
@@ -806,26 +806,26 @@ class Message27Decoder
        colData.add(pf.formatPrice(marketData.minPriceIncrementAmount().mantissa(), marketData.minPriceIncrementAmount().exponent()));
        colData.add(marketData.userDefinedInstrument());
        
-       for(final MDInstrumentDefinitionFuture27.NoEvents noEvents : marketData.noEvents())
+       for(final MDInstrumentDefinitionFuture54.NoEvents noEvents : marketData.noEvents())
        {
            noEvents.eventType();          
            noEvents.eventTime();
        }
        
-       for(final MDInstrumentDefinitionFuture27.NoMDFeedTypes noMDFeedTypes : marketData.noMDFeedTypes())
+       for(final MDInstrumentDefinitionFuture54.NoMDFeedTypes noMDFeedTypes : marketData.noMDFeedTypes())
        {
            try 
            {          
-               String na = new String(message, 0, noMDFeedTypes.getMDFeedType(message, 0),MDInstrumentDefinitionFuture27.NoMDFeedTypes.mDFeedTypeCharacterEncoding().trim());
+               String na = new String(message, 0, noMDFeedTypes.getMDFeedType(message, 0),MDInstrumentDefinitionFuture54.NoMDFeedTypes.mDFeedTypeCharacterEncoding().trim());
            } 
            catch (UnsupportedEncodingException ex) 
            {
-               System.out.println("UnsupportedEncodingException template 27" + ex);
+               System.out.println("UnsupportedEncodingException template 54" + ex);
            }
            noMDFeedTypes.marketDepth();
        }
        
-       for(final MDInstrumentDefinitionFuture27.NoInstAttrib noInstAttrib : marketData.noInstAttrib())
+       for(final MDInstrumentDefinitionFuture54.NoInstAttrib noInstAttrib : marketData.noInstAttrib())
        {
            noInstAttrib.instAttribType();
            
@@ -873,7 +873,7 @@ class Message27Decoder
             
        }
        
-       for(final MDInstrumentDefinitionFuture27.NoLotTypeRules noLotTypeRules : marketData.noLotTypeRules())
+       for(final MDInstrumentDefinitionFuture54.NoLotTypeRules noLotTypeRules : marketData.noLotTypeRules())
        {
            colData.add(noLotTypeRules.lotType());          
            colData.add(pf.formatPrice(noLotTypeRules.minLotSize().mantissa(), noLotTypeRules.minLotSize().exponent()));

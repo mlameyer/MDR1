@@ -3,14 +3,14 @@ package mktdata;
 
 import uk.co.real_logic.sbe.codec.java.*;
 
-public class MDIncrementalRefreshSessionStatistics35
+public class MDIncrementalRefreshDailyStatistics49
 {
     public static final int BLOCK_LENGTH = 11;
-    public static final int TEMPLATE_ID = 35;
+    public static final int TEMPLATE_ID = 49;
     public static final int SCHEMA_ID = 1;
     public static final int SCHEMA_VERSION = 9;
 
-    private final MDIncrementalRefreshSessionStatistics35 parentMessage = this;
+    private final MDIncrementalRefreshDailyStatistics49 parentMessage = this;
     private DirectBuffer buffer;
     private int offset;
     private int limit;
@@ -47,7 +47,7 @@ public class MDIncrementalRefreshSessionStatistics35
         return offset;
     }
 
-    public MDIncrementalRefreshSessionStatistics35 wrapForEncode(final DirectBuffer buffer, final int offset)
+    public MDIncrementalRefreshDailyStatistics49 wrapForEncode(final DirectBuffer buffer, final int offset)
     {
         this.buffer = buffer;
         this.offset = offset;
@@ -58,7 +58,7 @@ public class MDIncrementalRefreshSessionStatistics35
         return this;
     }
 
-    public MDIncrementalRefreshSessionStatistics35 wrapForDecode(
+    public MDIncrementalRefreshDailyStatistics49 wrapForDecode(
         final DirectBuffer buffer, final int offset, final int actingBlockLength, final int actingVersion)
     {
         this.buffer = buffer;
@@ -123,7 +123,7 @@ public class MDIncrementalRefreshSessionStatistics35
         return CodecUtil.uint64Get(buffer, offset + 0, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDIncrementalRefreshSessionStatistics35 transactTime(final long value)
+    public MDIncrementalRefreshDailyStatistics49 transactTime(final long value)
     {
         CodecUtil.uint64Put(buffer, offset + 0, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -177,7 +177,7 @@ public class MDIncrementalRefreshSessionStatistics35
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDIncrementalRefreshSessionStatistics35 parentMessage;
+        private MDIncrementalRefreshDailyStatistics49 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -186,7 +186,7 @@ public class MDIncrementalRefreshSessionStatistics35
         private int offset;
 
         public void wrapForDecode(
-            final MDIncrementalRefreshSessionStatistics35 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDIncrementalRefreshDailyStatistics49 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -198,17 +198,17 @@ public class MDIncrementalRefreshSessionStatistics35
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDIncrementalRefreshSessionStatistics35 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDIncrementalRefreshDailyStatistics49 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
             actingVersion = SCHEMA_VERSION;
             dimensions.wrap(buffer, parentMessage.limit(), actingVersion);
-            dimensions.blockLength((int)24);
+            dimensions.blockLength((int)32);
             dimensions.numInGroup((short)count);
             index = -1;
             this.count = count;
-            blockLength = 24;
+            blockLength = 32;
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
@@ -219,7 +219,7 @@ public class MDIncrementalRefreshSessionStatistics35
 
         public static int sbeBlockLength()
         {
-            return 24;
+            return 32;
         }
 
         public int actingBlockLength()
@@ -282,12 +282,55 @@ public class MDIncrementalRefreshSessionStatistics35
             return "";
         }
 
-        private final PRICE mDEntryPx = new PRICE();
+        private final PRICENULL9 mDEntryPx = new PRICENULL9();
 
-        public PRICE mDEntryPx()
+        public PRICENULL9 mDEntryPx()
         {
             mDEntryPx.wrap(buffer, offset + 0, actingVersion);
             return mDEntryPx;
+        }
+
+        public static int MDEntrySizeId()
+        {
+            return 271;
+        }
+
+        public static String MDEntrySizeMetaAttribute(final MetaAttribute metaAttribute)
+        {
+            switch (metaAttribute)
+            {
+                case EPOCH: return "unix";
+                case TIME_UNIT: return "nanosecond";
+                case SEMANTIC_TYPE: return "Qty";
+            }
+
+            return "";
+        }
+
+        public static int mDEntrySizeNullValue()
+        {
+            return 2147483647;
+        }
+
+        public static int mDEntrySizeMinValue()
+        {
+            return -2147483647;
+        }
+
+        public static int mDEntrySizeMaxValue()
+        {
+            return 2147483647;
+        }
+
+        public int mDEntrySize()
+        {
+            return CodecUtil.int32Get(buffer, offset + 8, java.nio.ByteOrder.LITTLE_ENDIAN);
+        }
+
+        public NoMDEntries mDEntrySize(final int value)
+        {
+            CodecUtil.int32Put(buffer, offset + 8, value, java.nio.ByteOrder.LITTLE_ENDIAN);
+            return this;
         }
 
         public static int SecurityIDId()
@@ -324,12 +367,12 @@ public class MDIncrementalRefreshSessionStatistics35
 
         public int securityID()
         {
-            return CodecUtil.int32Get(buffer, offset + 8, java.nio.ByteOrder.LITTLE_ENDIAN);
+            return CodecUtil.int32Get(buffer, offset + 12, java.nio.ByteOrder.LITTLE_ENDIAN);
         }
 
         public NoMDEntries securityID(final int value)
         {
-            CodecUtil.int32Put(buffer, offset + 8, value, java.nio.ByteOrder.LITTLE_ENDIAN);
+            CodecUtil.int32Put(buffer, offset + 12, value, java.nio.ByteOrder.LITTLE_ENDIAN);
             return this;
         }
 
@@ -367,41 +410,81 @@ public class MDIncrementalRefreshSessionStatistics35
 
         public long rptSeq()
         {
-            return CodecUtil.uint32Get(buffer, offset + 12, java.nio.ByteOrder.LITTLE_ENDIAN);
+            return CodecUtil.uint32Get(buffer, offset + 16, java.nio.ByteOrder.LITTLE_ENDIAN);
         }
 
         public NoMDEntries rptSeq(final long value)
         {
-            CodecUtil.uint32Put(buffer, offset + 12, value, java.nio.ByteOrder.LITTLE_ENDIAN);
+            CodecUtil.uint32Put(buffer, offset + 16, value, java.nio.ByteOrder.LITTLE_ENDIAN);
             return this;
         }
 
-        public static int OpenCloseSettlFlagId()
+        public static int TradingReferenceDateId()
         {
-            return 286;
+            return 5796;
         }
 
-        public static String OpenCloseSettlFlagMetaAttribute(final MetaAttribute metaAttribute)
+        public static String TradingReferenceDateMetaAttribute(final MetaAttribute metaAttribute)
         {
             switch (metaAttribute)
             {
                 case EPOCH: return "unix";
                 case TIME_UNIT: return "nanosecond";
-                case SEMANTIC_TYPE: return "int";
+                case SEMANTIC_TYPE: return "LocalMktDate";
             }
 
             return "";
         }
 
-        public OpenCloseSettlFlag openCloseSettlFlag()
+        public static int tradingReferenceDateNullValue()
         {
-            return OpenCloseSettlFlag.get(CodecUtil.uint8Get(buffer, offset + 16));
+            return 65535;
         }
 
-        public NoMDEntries openCloseSettlFlag(final OpenCloseSettlFlag value)
+        public static int tradingReferenceDateMinValue()
         {
-            CodecUtil.uint8Put(buffer, offset + 16, value.value());
+            return 0;
+        }
+
+        public static int tradingReferenceDateMaxValue()
+        {
+            return 65534;
+        }
+
+        public int tradingReferenceDate()
+        {
+            return CodecUtil.uint16Get(buffer, offset + 20, java.nio.ByteOrder.LITTLE_ENDIAN);
+        }
+
+        public NoMDEntries tradingReferenceDate(final int value)
+        {
+            CodecUtil.uint16Put(buffer, offset + 20, value, java.nio.ByteOrder.LITTLE_ENDIAN);
             return this;
+        }
+
+        public static int SettlPriceTypeId()
+        {
+            return 731;
+        }
+
+        public static String SettlPriceTypeMetaAttribute(final MetaAttribute metaAttribute)
+        {
+            switch (metaAttribute)
+            {
+                case EPOCH: return "unix";
+                case TIME_UNIT: return "nanosecond";
+                case SEMANTIC_TYPE: return "MultipleCharValue";
+            }
+
+            return "";
+        }
+
+        private final SettlPriceType settlPriceType = new SettlPriceType();
+
+        public SettlPriceType settlPriceType()
+        {
+            settlPriceType.wrap(buffer, offset + 22, actingVersion);
+            return settlPriceType;
         }
 
         public static int MDUpdateActionId()
@@ -423,12 +506,12 @@ public class MDIncrementalRefreshSessionStatistics35
 
         public MDUpdateAction mDUpdateAction()
         {
-            return MDUpdateAction.get(CodecUtil.uint8Get(buffer, offset + 17));
+            return MDUpdateAction.get(CodecUtil.uint8Get(buffer, offset + 23));
         }
 
         public NoMDEntries mDUpdateAction(final MDUpdateAction value)
         {
-            CodecUtil.uint8Put(buffer, offset + 17, value.value());
+            CodecUtil.uint8Put(buffer, offset + 23, value.value());
             return this;
         }
 
@@ -449,62 +532,14 @@ public class MDIncrementalRefreshSessionStatistics35
             return "";
         }
 
-        public MDEntryTypeStatistics mDEntryType()
+        public MDEntryTypeDailyStatistics mDEntryType()
         {
-            return MDEntryTypeStatistics.get(CodecUtil.charGet(buffer, offset + 18));
+            return MDEntryTypeDailyStatistics.get(CodecUtil.charGet(buffer, offset + 24));
         }
 
-        public NoMDEntries mDEntryType(final MDEntryTypeStatistics value)
+        public NoMDEntries mDEntryType(final MDEntryTypeDailyStatistics value)
         {
-            CodecUtil.charPut(buffer, offset + 18, value.value());
-            return this;
-        }
-
-        public static int MDEntrySizeId()
-        {
-            return 271;
-        }
-
-        public static String MDEntrySizeMetaAttribute(final MetaAttribute metaAttribute)
-        {
-            switch (metaAttribute)
-            {
-                case EPOCH: return "unix";
-                case TIME_UNIT: return "nanosecond";
-                case SEMANTIC_TYPE: return "Qty";
-            }
-
-            return "";
-        }
-
-        public static int mDEntrySizeNullValue()
-        {
-            return 2147483647;
-        }
-
-        public static int mDEntrySizeMinValue()
-        {
-            return -2147483647;
-        }
-
-        public static int mDEntrySizeMaxValue()
-        {
-            return 2147483647;
-        }
-
-        public int mDEntrySize()
-        {
-            if (actingVersion < 8)
-            {
-                return 2147483647;
-            }
-
-            return CodecUtil.int32Get(buffer, offset + 19, java.nio.ByteOrder.LITTLE_ENDIAN);
-        }
-
-        public NoMDEntries mDEntrySize(final int value)
-        {
-            CodecUtil.int32Put(buffer, offset + 19, value, java.nio.ByteOrder.LITTLE_ENDIAN);
+            CodecUtil.charPut(buffer, offset + 24, value.value());
             return this;
         }
     }

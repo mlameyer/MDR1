@@ -9,26 +9,26 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 import mktdata.SettlPriceType;
-import mktdata.SnapshotFullRefresh38;
+import mktdata.SnapshotFullRefresh52;
 import uk.co.real_logic.sbe.codec.java.DirectBuffer;
 
 /**
  *
  * @author Administrator
  */
-class Message38Decoder 
+class Message52Decoder 
 {
     private final int template = 38;
     private final boolean option;
     private String tableName;
-    private final SnapshotFullRefresh38 marketData = new SnapshotFullRefresh38();
+    private final SnapshotFullRefresh52 marketData = new SnapshotFullRefresh52();
     private final byte[] message;
     private final int bufferOffset;
     private final int actingBlockLength;
     private final int actingVersion;
     private String SPT;
     
-    public Message38Decoder(byte[] message, int bufferOffset, int actingBlockLength, int actingVersion, boolean option) 
+    public Message52Decoder(byte[] message, int bufferOffset, int actingBlockLength, int actingVersion, boolean option) 
     {
        this.message = message;
        this.bufferOffset = bufferOffset;
@@ -64,7 +64,7 @@ class Message38Decoder
        colData.add(pf.formatPrice(marketData.lowLimitPrice().mantissa(), marketData.lowLimitPrice().exponent())); 
        colData.add(pf.formatPrice(marketData.maxPriceVariation().mantissa(), marketData.maxPriceVariation().exponent()));
        
-       for(final SnapshotFullRefresh38.NoMDEntries noMDEntries : marketData.noMDEntries())
+       for(final SnapshotFullRefresh52.NoMDEntries noMDEntries : marketData.noMDEntries())
        {
            colData.add(pf.formatPrice(noMDEntries.mDEntryPx().mantissa(), noMDEntries.mDEntryPx().exponent()));
            colData.add(noMDEntries.mDEntrySize());                   

@@ -3,14 +3,14 @@ package mktdata;
 
 import uk.co.real_logic.sbe.codec.java.*;
 
-public class MDInstrumentDefinitionOption41
+public class MDInstrumentDefinitionSpread56
 {
-    public static final int BLOCK_LENGTH = 213;
-    public static final int TEMPLATE_ID = 41;
+    public static final int BLOCK_LENGTH = 195;
+    public static final int TEMPLATE_ID = 56;
     public static final int SCHEMA_ID = 1;
     public static final int SCHEMA_VERSION = 9;
 
-    private final MDInstrumentDefinitionOption41 parentMessage = this;
+    private final MDInstrumentDefinitionSpread56 parentMessage = this;
     private DirectBuffer buffer;
     private int offset;
     private int limit;
@@ -47,7 +47,7 @@ public class MDInstrumentDefinitionOption41
         return offset;
     }
 
-    public MDInstrumentDefinitionOption41 wrapForEncode(final DirectBuffer buffer, final int offset)
+    public MDInstrumentDefinitionSpread56 wrapForEncode(final DirectBuffer buffer, final int offset)
     {
         this.buffer = buffer;
         this.offset = offset;
@@ -58,7 +58,7 @@ public class MDInstrumentDefinitionOption41
         return this;
     }
 
-    public MDInstrumentDefinitionOption41 wrapForDecode(
+    public MDInstrumentDefinitionSpread56 wrapForDecode(
         final DirectBuffer buffer, final int offset, final int actingBlockLength, final int actingVersion)
     {
         this.buffer = buffer;
@@ -148,7 +148,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint32Get(buffer, offset + 1, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 totNumReports(final long value)
+    public MDInstrumentDefinitionSpread56 totNumReports(final long value)
     {
         CodecUtil.uint32Put(buffer, offset + 1, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -176,7 +176,7 @@ public class MDInstrumentDefinitionOption41
         return SecurityUpdateAction.get(CodecUtil.charGet(buffer, offset + 5));
     }
 
-    public MDInstrumentDefinitionOption41 securityUpdateAction(final SecurityUpdateAction value)
+    public MDInstrumentDefinitionSpread56 securityUpdateAction(final SecurityUpdateAction value)
     {
         CodecUtil.charPut(buffer, offset + 5, value.value());
         return this;
@@ -219,7 +219,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint64Get(buffer, offset + 6, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 lastUpdateTime(final long value)
+    public MDInstrumentDefinitionSpread56 lastUpdateTime(final long value)
     {
         CodecUtil.uint64Put(buffer, offset + 6, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -247,7 +247,7 @@ public class MDInstrumentDefinitionOption41
         return SecurityTradingStatus.get(CodecUtil.uint8Get(buffer, offset + 14));
     }
 
-    public MDInstrumentDefinitionOption41 mDSecurityTradingStatus(final SecurityTradingStatus value)
+    public MDInstrumentDefinitionSpread56 mDSecurityTradingStatus(final SecurityTradingStatus value)
     {
         CodecUtil.uint8Put(buffer, offset + 14, value.value());
         return this;
@@ -290,7 +290,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.int16Get(buffer, offset + 15, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 applID(final short value)
+    public MDInstrumentDefinitionSpread56 applID(final short value)
     {
         CodecUtil.int16Put(buffer, offset + 15, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -333,7 +333,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint8Get(buffer, offset + 17);
     }
 
-    public MDInstrumentDefinitionOption41 marketSegmentID(final short value)
+    public MDInstrumentDefinitionSpread56 marketSegmentID(final short value)
     {
         CodecUtil.uint8Put(buffer, offset + 17, value);
         return this;
@@ -376,7 +376,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint8Get(buffer, offset + 18);
     }
 
-    public MDInstrumentDefinitionOption41 underlyingProduct(final short value)
+    public MDInstrumentDefinitionSpread56 underlyingProduct(final short value)
     {
         CodecUtil.uint8Put(buffer, offset + 18, value);
         return this;
@@ -456,7 +456,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putSecurityExchange(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionSpread56 putSecurityExchange(final byte[] src, final int srcOffset)
     {
         final int length = 4;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -542,7 +542,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putSecurityGroup(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionSpread56 putSecurityGroup(final byte[] src, final int srcOffset)
     {
         final int length = 6;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -628,7 +628,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putAsset(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionSpread56 putAsset(final byte[] src, final int srcOffset)
     {
         final int length = 6;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -714,7 +714,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putSymbol(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionSpread56 putSymbol(final byte[] src, final int srcOffset)
     {
         final int length = 20;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -763,7 +763,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.int32Get(buffer, offset + 55, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 securityID(final int value)
+    public MDInstrumentDefinitionSpread56 securityID(final int value)
     {
         CodecUtil.int32Put(buffer, offset + 55, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -894,7 +894,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putSecurityType(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionSpread56 putSecurityType(final byte[] src, final int srcOffset)
     {
         final int length = 6;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -980,7 +980,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putCFICode(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionSpread56 putCFICode(final byte[] src, final int srcOffset)
     {
         final int length = 6;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -989,34 +989,6 @@ public class MDInstrumentDefinitionOption41
         }
 
         CodecUtil.charsPut(buffer, this.offset + 65, src, srcOffset, length);
-        return this;
-    }
-
-    public static int PutOrCallId()
-    {
-        return 201;
-    }
-
-    public static String PutOrCallMetaAttribute(final MetaAttribute metaAttribute)
-    {
-        switch (metaAttribute)
-        {
-            case EPOCH: return "unix";
-            case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "int";
-        }
-
-        return "";
-    }
-
-    public PutOrCall putOrCall()
-    {
-        return PutOrCall.get(CodecUtil.uint8Get(buffer, offset + 71));
-    }
-
-    public MDInstrumentDefinitionOption41 putOrCall(final PutOrCall value)
-    {
-        CodecUtil.uint8Put(buffer, offset + 71, value.value());
         return this;
     }
 
@@ -1041,7 +1013,7 @@ public class MDInstrumentDefinitionOption41
 
     public MaturityMonthYear maturityMonthYear()
     {
-        maturityMonthYear.wrap(buffer, offset + 72, actingVersion);
+        maturityMonthYear.wrap(buffer, offset + 71, actingVersion);
         return maturityMonthYear;
     }
 
@@ -1089,7 +1061,7 @@ public class MDInstrumentDefinitionOption41
             throw new IndexOutOfBoundsException("index out of range: index=" + index);
         }
 
-        return CodecUtil.charGet(buffer, this.offset + 77 + (index * 1));
+        return CodecUtil.charGet(buffer, this.offset + 76 + (index * 1));
     }
 
     public void currency(final int index, final byte value)
@@ -1099,7 +1071,7 @@ public class MDInstrumentDefinitionOption41
             throw new IndexOutOfBoundsException("index out of range: index=" + index);
         }
 
-        CodecUtil.charPut(buffer, this.offset + 77 + (index * 1), value);
+        CodecUtil.charPut(buffer, this.offset + 76 + (index * 1), value);
     }
 
     public static String currencyCharacterEncoding()
@@ -1115,11 +1087,11 @@ public class MDInstrumentDefinitionOption41
             throw new IndexOutOfBoundsException(                "dstOffset out of range for copy: offset=" + dstOffset);
         }
 
-        CodecUtil.charsGet(buffer, this.offset + 77, dst, dstOffset, length);
+        CodecUtil.charsGet(buffer, this.offset + 76, dst, dstOffset, length);
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putCurrency(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionSpread56 putCurrency(final byte[] src, final int srcOffset)
     {
         final int length = 3;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -1127,230 +1099,137 @@ public class MDInstrumentDefinitionOption41
             throw new IndexOutOfBoundsException(                "srcOffset out of range for copy: offset=" + srcOffset);
         }
 
-        CodecUtil.charsPut(buffer, this.offset + 77, src, srcOffset, length);
+        CodecUtil.charsPut(buffer, this.offset + 76, src, srcOffset, length);
         return this;
     }
 
-    public static int StrikePriceId()
+    public static int SecuritySubTypeId()
     {
-        return 202;
+        return 762;
     }
 
-    public static String StrikePriceMetaAttribute(final MetaAttribute metaAttribute)
-    {
-        switch (metaAttribute)
-        {
-            case EPOCH: return "unix";
-            case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "Price";
-        }
-
-        return "";
-    }
-
-    private final PRICENULL strikePrice = new PRICENULL();
-
-    public PRICENULL strikePrice()
-    {
-        strikePrice.wrap(buffer, offset + 80, actingVersion);
-        return strikePrice;
-    }
-
-    public static int StrikeCurrencyId()
-    {
-        return 947;
-    }
-
-    public static String StrikeCurrencyMetaAttribute(final MetaAttribute metaAttribute)
+    public static String SecuritySubTypeMetaAttribute(final MetaAttribute metaAttribute)
     {
         switch (metaAttribute)
         {
             case EPOCH: return "unix";
             case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "Currency";
+            case SEMANTIC_TYPE: return "String";
         }
 
         return "";
     }
 
-    public static byte strikeCurrencyNullValue()
+    public static byte securitySubTypeNullValue()
     {
         return (byte)0;
     }
 
-    public static byte strikeCurrencyMinValue()
+    public static byte securitySubTypeMinValue()
     {
         return (byte)32;
     }
 
-    public static byte strikeCurrencyMaxValue()
+    public static byte securitySubTypeMaxValue()
     {
         return (byte)126;
     }
 
-    public static int strikeCurrencyLength()
+    public static int securitySubTypeLength()
     {
-        return 3;
+        return 5;
     }
 
-    public byte strikeCurrency(final int index)
+    public byte securitySubType(final int index)
     {
-        if (index < 0 || index >= 3)
+        if (index < 0 || index >= 5)
         {
             throw new IndexOutOfBoundsException("index out of range: index=" + index);
         }
 
-        return CodecUtil.charGet(buffer, this.offset + 88 + (index * 1));
+        return CodecUtil.charGet(buffer, this.offset + 79 + (index * 1));
     }
 
-    public void strikeCurrency(final int index, final byte value)
+    public void securitySubType(final int index, final byte value)
     {
-        if (index < 0 || index >= 3)
+        if (index < 0 || index >= 5)
         {
             throw new IndexOutOfBoundsException("index out of range: index=" + index);
         }
 
-        CodecUtil.charPut(buffer, this.offset + 88 + (index * 1), value);
+        CodecUtil.charPut(buffer, this.offset + 79 + (index * 1), value);
     }
 
-    public static String strikeCurrencyCharacterEncoding()
+    public static String securitySubTypeCharacterEncoding()
     {
         return "UTF-8";
     }
 
-    public int getStrikeCurrency(final byte[] dst, final int dstOffset)
+    public int getSecuritySubType(final byte[] dst, final int dstOffset)
     {
-        final int length = 3;
+        final int length = 5;
         if (dstOffset < 0 || dstOffset > (dst.length - length))
         {
             throw new IndexOutOfBoundsException(                "dstOffset out of range for copy: offset=" + dstOffset);
         }
 
-        CodecUtil.charsGet(buffer, this.offset + 88, dst, dstOffset, length);
+        CodecUtil.charsGet(buffer, this.offset + 79, dst, dstOffset, length);
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putStrikeCurrency(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionSpread56 putSecuritySubType(final byte[] src, final int srcOffset)
     {
-        final int length = 3;
+        final int length = 5;
         if (srcOffset < 0 || srcOffset > (src.length - length))
         {
             throw new IndexOutOfBoundsException(                "srcOffset out of range for copy: offset=" + srcOffset);
         }
 
-        CodecUtil.charsPut(buffer, this.offset + 88, src, srcOffset, length);
+        CodecUtil.charsPut(buffer, this.offset + 79, src, srcOffset, length);
         return this;
     }
 
-    public static int SettlCurrencyId()
+    public static int UserDefinedInstrumentId()
     {
-        return 120;
+        return 9779;
     }
 
-    public static String SettlCurrencyMetaAttribute(final MetaAttribute metaAttribute)
+    public static String UserDefinedInstrumentMetaAttribute(final MetaAttribute metaAttribute)
     {
         switch (metaAttribute)
         {
             case EPOCH: return "unix";
             case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "Currency";
+            case SEMANTIC_TYPE: return "char";
         }
 
         return "";
     }
 
-    public static byte settlCurrencyNullValue()
+    public static byte userDefinedInstrumentNullValue()
     {
         return (byte)0;
     }
 
-    public static byte settlCurrencyMinValue()
+    public static byte userDefinedInstrumentMinValue()
     {
         return (byte)32;
     }
 
-    public static byte settlCurrencyMaxValue()
+    public static byte userDefinedInstrumentMaxValue()
     {
         return (byte)126;
     }
 
-    public static int settlCurrencyLength()
+    public byte userDefinedInstrument()
     {
-        return 3;
+        return CodecUtil.charGet(buffer, offset + 84);
     }
 
-    public byte settlCurrency(final int index)
+    public MDInstrumentDefinitionSpread56 userDefinedInstrument(final byte value)
     {
-        if (index < 0 || index >= 3)
-        {
-            throw new IndexOutOfBoundsException("index out of range: index=" + index);
-        }
-
-        return CodecUtil.charGet(buffer, this.offset + 91 + (index * 1));
-    }
-
-    public void settlCurrency(final int index, final byte value)
-    {
-        if (index < 0 || index >= 3)
-        {
-            throw new IndexOutOfBoundsException("index out of range: index=" + index);
-        }
-
-        CodecUtil.charPut(buffer, this.offset + 91 + (index * 1), value);
-    }
-
-    public static String settlCurrencyCharacterEncoding()
-    {
-        return "UTF-8";
-    }
-
-    public int getSettlCurrency(final byte[] dst, final int dstOffset)
-    {
-        final int length = 3;
-        if (dstOffset < 0 || dstOffset > (dst.length - length))
-        {
-            throw new IndexOutOfBoundsException(                "dstOffset out of range for copy: offset=" + dstOffset);
-        }
-
-        CodecUtil.charsGet(buffer, this.offset + 91, dst, dstOffset, length);
-        return length;
-    }
-
-    public MDInstrumentDefinitionOption41 putSettlCurrency(final byte[] src, final int srcOffset)
-    {
-        final int length = 3;
-        if (srcOffset < 0 || srcOffset > (src.length - length))
-        {
-            throw new IndexOutOfBoundsException(                "srcOffset out of range for copy: offset=" + srcOffset);
-        }
-
-        CodecUtil.charsPut(buffer, this.offset + 91, src, srcOffset, length);
+        CodecUtil.charPut(buffer, offset + 84, value);
         return this;
-    }
-
-    public static int MinCabPriceId()
-    {
-        return 9850;
-    }
-
-    public static String MinCabPriceMetaAttribute(final MetaAttribute metaAttribute)
-    {
-        switch (metaAttribute)
-        {
-            case EPOCH: return "unix";
-            case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "Price";
-        }
-
-        return "";
-    }
-
-    private final PRICENULL minCabPrice = new PRICENULL();
-
-    public PRICENULL minCabPrice()
-    {
-        minCabPrice.wrap(buffer, offset + 94, actingVersion);
-        return minCabPrice;
     }
 
     public static int MatchAlgorithmId()
@@ -1387,12 +1266,12 @@ public class MDInstrumentDefinitionOption41
 
     public byte matchAlgorithm()
     {
-        return CodecUtil.charGet(buffer, offset + 102);
+        return CodecUtil.charGet(buffer, offset + 85);
     }
 
-    public MDInstrumentDefinitionOption41 matchAlgorithm(final byte value)
+    public MDInstrumentDefinitionSpread56 matchAlgorithm(final byte value)
     {
-        CodecUtil.charPut(buffer, offset + 102, value);
+        CodecUtil.charPut(buffer, offset + 85, value);
         return this;
     }
 
@@ -1430,12 +1309,12 @@ public class MDInstrumentDefinitionOption41
 
     public long minTradeVol()
     {
-        return CodecUtil.uint32Get(buffer, offset + 103, java.nio.ByteOrder.LITTLE_ENDIAN);
+        return CodecUtil.uint32Get(buffer, offset + 86, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 minTradeVol(final long value)
+    public MDInstrumentDefinitionSpread56 minTradeVol(final long value)
     {
-        CodecUtil.uint32Put(buffer, offset + 103, value, java.nio.ByteOrder.LITTLE_ENDIAN);
+        CodecUtil.uint32Put(buffer, offset + 86, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
     }
 
@@ -1473,12 +1352,12 @@ public class MDInstrumentDefinitionOption41
 
     public long maxTradeVol()
     {
-        return CodecUtil.uint32Get(buffer, offset + 107, java.nio.ByteOrder.LITTLE_ENDIAN);
+        return CodecUtil.uint32Get(buffer, offset + 90, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 maxTradeVol(final long value)
+    public MDInstrumentDefinitionSpread56 maxTradeVol(final long value)
     {
-        CodecUtil.uint32Put(buffer, offset + 107, value, java.nio.ByteOrder.LITTLE_ENDIAN);
+        CodecUtil.uint32Put(buffer, offset + 90, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
     }
 
@@ -1499,37 +1378,12 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final PRICENULL minPriceIncrement = new PRICENULL();
+    private final PRICENULL9 minPriceIncrement = new PRICENULL9();
 
-    public PRICENULL minPriceIncrement()
+    public PRICENULL9 minPriceIncrement()
     {
-        minPriceIncrement.wrap(buffer, offset + 111, actingVersion);
+        minPriceIncrement.wrap(buffer, offset + 94, actingVersion);
         return minPriceIncrement;
-    }
-
-    public static int MinPriceIncrementAmountId()
-    {
-        return 1146;
-    }
-
-    public static String MinPriceIncrementAmountMetaAttribute(final MetaAttribute metaAttribute)
-    {
-        switch (metaAttribute)
-        {
-            case EPOCH: return "unix";
-            case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "Price";
-        }
-
-        return "";
-    }
-
-    private final PRICENULL minPriceIncrementAmount = new PRICENULL();
-
-    public PRICENULL minPriceIncrementAmount()
-    {
-        minPriceIncrementAmount.wrap(buffer, offset + 119, actingVersion);
-        return minPriceIncrementAmount;
     }
 
     public static int DisplayFactorId()
@@ -1549,141 +1403,12 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final FLOAT displayFactor = new FLOAT();
+    private final Decimal9 displayFactor = new Decimal9();
 
-    public FLOAT displayFactor()
+    public Decimal9 displayFactor()
     {
-        displayFactor.wrap(buffer, offset + 127, actingVersion);
+        displayFactor.wrap(buffer, offset + 102, actingVersion);
         return displayFactor;
-    }
-
-    public static int TickRuleId()
-    {
-        return 6350;
-    }
-
-    public static String TickRuleMetaAttribute(final MetaAttribute metaAttribute)
-    {
-        switch (metaAttribute)
-        {
-            case EPOCH: return "unix";
-            case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "int";
-        }
-
-        return "";
-    }
-
-    public static byte tickRuleNullValue()
-    {
-        return (byte)127;
-    }
-
-    public static byte tickRuleMinValue()
-    {
-        return (byte)-127;
-    }
-
-    public static byte tickRuleMaxValue()
-    {
-        return (byte)127;
-    }
-
-    public byte tickRule()
-    {
-        return CodecUtil.int8Get(buffer, offset + 135);
-    }
-
-    public MDInstrumentDefinitionOption41 tickRule(final byte value)
-    {
-        CodecUtil.int8Put(buffer, offset + 135, value);
-        return this;
-    }
-
-    public static int MainFractionId()
-    {
-        return 37702;
-    }
-
-    public static String MainFractionMetaAttribute(final MetaAttribute metaAttribute)
-    {
-        switch (metaAttribute)
-        {
-            case EPOCH: return "unix";
-            case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "int";
-        }
-
-        return "";
-    }
-
-    public static short mainFractionNullValue()
-    {
-        return (short)255;
-    }
-
-    public static short mainFractionMinValue()
-    {
-        return (short)0;
-    }
-
-    public static short mainFractionMaxValue()
-    {
-        return (short)254;
-    }
-
-    public short mainFraction()
-    {
-        return CodecUtil.uint8Get(buffer, offset + 136);
-    }
-
-    public MDInstrumentDefinitionOption41 mainFraction(final short value)
-    {
-        CodecUtil.uint8Put(buffer, offset + 136, value);
-        return this;
-    }
-
-    public static int SubFractionId()
-    {
-        return 37703;
-    }
-
-    public static String SubFractionMetaAttribute(final MetaAttribute metaAttribute)
-    {
-        switch (metaAttribute)
-        {
-            case EPOCH: return "unix";
-            case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "int";
-        }
-
-        return "";
-    }
-
-    public static short subFractionNullValue()
-    {
-        return (short)255;
-    }
-
-    public static short subFractionMinValue()
-    {
-        return (short)0;
-    }
-
-    public static short subFractionMaxValue()
-    {
-        return (short)254;
-    }
-
-    public short subFraction()
-    {
-        return CodecUtil.uint8Get(buffer, offset + 137);
-    }
-
-    public MDInstrumentDefinitionOption41 subFraction(final short value)
-    {
-        CodecUtil.uint8Put(buffer, offset + 137, value);
-        return this;
     }
 
     public static int PriceDisplayFormatId()
@@ -1720,12 +1445,80 @@ public class MDInstrumentDefinitionOption41
 
     public short priceDisplayFormat()
     {
-        return CodecUtil.uint8Get(buffer, offset + 138);
+        return CodecUtil.uint8Get(buffer, offset + 110);
     }
 
-    public MDInstrumentDefinitionOption41 priceDisplayFormat(final short value)
+    public MDInstrumentDefinitionSpread56 priceDisplayFormat(final short value)
     {
-        CodecUtil.uint8Put(buffer, offset + 138, value);
+        CodecUtil.uint8Put(buffer, offset + 110, value);
+        return this;
+    }
+
+    public static int PriceRatioId()
+    {
+        return 5770;
+    }
+
+    public static String PriceRatioMetaAttribute(final MetaAttribute metaAttribute)
+    {
+        switch (metaAttribute)
+        {
+            case EPOCH: return "unix";
+            case TIME_UNIT: return "nanosecond";
+            case SEMANTIC_TYPE: return "Price";
+        }
+
+        return "";
+    }
+
+    private final PRICENULL9 priceRatio = new PRICENULL9();
+
+    public PRICENULL9 priceRatio()
+    {
+        priceRatio.wrap(buffer, offset + 111, actingVersion);
+        return priceRatio;
+    }
+
+    public static int TickRuleId()
+    {
+        return 6350;
+    }
+
+    public static String TickRuleMetaAttribute(final MetaAttribute metaAttribute)
+    {
+        switch (metaAttribute)
+        {
+            case EPOCH: return "unix";
+            case TIME_UNIT: return "nanosecond";
+            case SEMANTIC_TYPE: return "int";
+        }
+
+        return "";
+    }
+
+    public static byte tickRuleNullValue()
+    {
+        return (byte)127;
+    }
+
+    public static byte tickRuleMinValue()
+    {
+        return (byte)-127;
+    }
+
+    public static byte tickRuleMaxValue()
+    {
+        return (byte)127;
+    }
+
+    public byte tickRule()
+    {
+        return CodecUtil.int8Get(buffer, offset + 119);
+    }
+
+    public MDInstrumentDefinitionSpread56 tickRule(final byte value)
+    {
+        CodecUtil.int8Put(buffer, offset + 119, value);
         return this;
     }
 
@@ -1773,7 +1566,7 @@ public class MDInstrumentDefinitionOption41
             throw new IndexOutOfBoundsException("index out of range: index=" + index);
         }
 
-        return CodecUtil.charGet(buffer, this.offset + 139 + (index * 1));
+        return CodecUtil.charGet(buffer, this.offset + 120 + (index * 1));
     }
 
     public void unitOfMeasure(final int index, final byte value)
@@ -1783,7 +1576,7 @@ public class MDInstrumentDefinitionOption41
             throw new IndexOutOfBoundsException("index out of range: index=" + index);
         }
 
-        CodecUtil.charPut(buffer, this.offset + 139 + (index * 1), value);
+        CodecUtil.charPut(buffer, this.offset + 120 + (index * 1), value);
     }
 
     public static String unitOfMeasureCharacterEncoding()
@@ -1799,11 +1592,11 @@ public class MDInstrumentDefinitionOption41
             throw new IndexOutOfBoundsException(                "dstOffset out of range for copy: offset=" + dstOffset);
         }
 
-        CodecUtil.charsGet(buffer, this.offset + 139, dst, dstOffset, length);
+        CodecUtil.charsGet(buffer, this.offset + 120, dst, dstOffset, length);
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putUnitOfMeasure(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionSpread56 putUnitOfMeasure(final byte[] src, final int srcOffset)
     {
         final int length = 30;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -1811,33 +1604,8 @@ public class MDInstrumentDefinitionOption41
             throw new IndexOutOfBoundsException(                "srcOffset out of range for copy: offset=" + srcOffset);
         }
 
-        CodecUtil.charsPut(buffer, this.offset + 139, src, srcOffset, length);
+        CodecUtil.charsPut(buffer, this.offset + 120, src, srcOffset, length);
         return this;
-    }
-
-    public static int UnitOfMeasureQtyId()
-    {
-        return 1147;
-    }
-
-    public static String UnitOfMeasureQtyMetaAttribute(final MetaAttribute metaAttribute)
-    {
-        switch (metaAttribute)
-        {
-            case EPOCH: return "unix";
-            case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "Qty";
-        }
-
-        return "";
-    }
-
-    private final PRICENULL unitOfMeasureQty = new PRICENULL();
-
-    public PRICENULL unitOfMeasureQty()
-    {
-        unitOfMeasureQty.wrap(buffer, offset + 169, actingVersion);
-        return unitOfMeasureQty;
     }
 
     public static int TradingReferencePriceId()
@@ -1857,11 +1625,11 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final PRICENULL tradingReferencePrice = new PRICENULL();
+    private final PRICENULL9 tradingReferencePrice = new PRICENULL9();
 
-    public PRICENULL tradingReferencePrice()
+    public PRICENULL9 tradingReferencePrice()
     {
-        tradingReferencePrice.wrap(buffer, offset + 177, actingVersion);
+        tradingReferencePrice.wrap(buffer, offset + 150, actingVersion);
         return tradingReferencePrice;
     }
 
@@ -1886,51 +1654,8 @@ public class MDInstrumentDefinitionOption41
 
     public SettlPriceType settlPriceType()
     {
-        settlPriceType.wrap(buffer, offset + 185, actingVersion);
+        settlPriceType.wrap(buffer, offset + 158, actingVersion);
         return settlPriceType;
-    }
-
-    public static int ClearedVolumeId()
-    {
-        return 5791;
-    }
-
-    public static String ClearedVolumeMetaAttribute(final MetaAttribute metaAttribute)
-    {
-        switch (metaAttribute)
-        {
-            case EPOCH: return "unix";
-            case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "Qty";
-        }
-
-        return "";
-    }
-
-    public static int clearedVolumeNullValue()
-    {
-        return 2147483647;
-    }
-
-    public static int clearedVolumeMinValue()
-    {
-        return -2147483647;
-    }
-
-    public static int clearedVolumeMaxValue()
-    {
-        return 2147483647;
-    }
-
-    public int clearedVolume()
-    {
-        return CodecUtil.int32Get(buffer, offset + 186, java.nio.ByteOrder.LITTLE_ENDIAN);
-    }
-
-    public MDInstrumentDefinitionOption41 clearedVolume(final int value)
-    {
-        CodecUtil.int32Put(buffer, offset + 186, value, java.nio.ByteOrder.LITTLE_ENDIAN);
-        return this;
     }
 
     public static int OpenInterestQtyId()
@@ -1967,38 +1692,56 @@ public class MDInstrumentDefinitionOption41
 
     public int openInterestQty()
     {
-        return CodecUtil.int32Get(buffer, offset + 190, java.nio.ByteOrder.LITTLE_ENDIAN);
+        return CodecUtil.int32Get(buffer, offset + 159, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 openInterestQty(final int value)
+    public MDInstrumentDefinitionSpread56 openInterestQty(final int value)
     {
-        CodecUtil.int32Put(buffer, offset + 190, value, java.nio.ByteOrder.LITTLE_ENDIAN);
+        CodecUtil.int32Put(buffer, offset + 159, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
     }
 
-    public static int LowLimitPriceId()
+    public static int ClearedVolumeId()
     {
-        return 1148;
+        return 5791;
     }
 
-    public static String LowLimitPriceMetaAttribute(final MetaAttribute metaAttribute)
+    public static String ClearedVolumeMetaAttribute(final MetaAttribute metaAttribute)
     {
         switch (metaAttribute)
         {
             case EPOCH: return "unix";
             case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "Price";
+            case SEMANTIC_TYPE: return "Qty";
         }
 
         return "";
     }
 
-    private final PRICENULL lowLimitPrice = new PRICENULL();
-
-    public PRICENULL lowLimitPrice()
+    public static int clearedVolumeNullValue()
     {
-        lowLimitPrice.wrap(buffer, offset + 194, actingVersion);
-        return lowLimitPrice;
+        return 2147483647;
+    }
+
+    public static int clearedVolumeMinValue()
+    {
+        return -2147483647;
+    }
+
+    public static int clearedVolumeMaxValue()
+    {
+        return 2147483647;
+    }
+
+    public int clearedVolume()
+    {
+        return CodecUtil.int32Get(buffer, offset + 163, java.nio.ByteOrder.LITTLE_ENDIAN);
+    }
+
+    public MDInstrumentDefinitionSpread56 clearedVolume(final int value)
+    {
+        CodecUtil.int32Put(buffer, offset + 163, value, java.nio.ByteOrder.LITTLE_ENDIAN);
+        return this;
     }
 
     public static int HighLimitPriceId()
@@ -2018,54 +1761,147 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final PRICENULL highLimitPrice = new PRICENULL();
+    private final PRICENULL9 highLimitPrice = new PRICENULL9();
 
-    public PRICENULL highLimitPrice()
+    public PRICENULL9 highLimitPrice()
     {
-        highLimitPrice.wrap(buffer, offset + 202, actingVersion);
+        highLimitPrice.wrap(buffer, offset + 167, actingVersion);
         return highLimitPrice;
     }
 
-    public static int UserDefinedInstrumentId()
+    public static int LowLimitPriceId()
     {
-        return 9779;
+        return 1148;
     }
 
-    public static String UserDefinedInstrumentMetaAttribute(final MetaAttribute metaAttribute)
+    public static String LowLimitPriceMetaAttribute(final MetaAttribute metaAttribute)
     {
         switch (metaAttribute)
         {
             case EPOCH: return "unix";
             case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "char";
+            case SEMANTIC_TYPE: return "Price";
         }
 
         return "";
     }
 
-    public static byte userDefinedInstrumentNullValue()
+    private final PRICENULL9 lowLimitPrice = new PRICENULL9();
+
+    public PRICENULL9 lowLimitPrice()
     {
-        return (byte)0;
+        lowLimitPrice.wrap(buffer, offset + 175, actingVersion);
+        return lowLimitPrice;
     }
 
-    public static byte userDefinedInstrumentMinValue()
+    public static int MaxPriceVariationId()
     {
-        return (byte)32;
+        return 1143;
     }
 
-    public static byte userDefinedInstrumentMaxValue()
+    public static String MaxPriceVariationMetaAttribute(final MetaAttribute metaAttribute)
     {
-        return (byte)126;
+        switch (metaAttribute)
+        {
+            case EPOCH: return "unix";
+            case TIME_UNIT: return "nanosecond";
+            case SEMANTIC_TYPE: return "Price";
+        }
+
+        return "";
     }
 
-    public byte userDefinedInstrument()
+    private final PRICENULL9 maxPriceVariation = new PRICENULL9();
+
+    public PRICENULL9 maxPriceVariation()
     {
-        return CodecUtil.charGet(buffer, offset + 210);
+        maxPriceVariation.wrap(buffer, offset + 183, actingVersion);
+        return maxPriceVariation;
     }
 
-    public MDInstrumentDefinitionOption41 userDefinedInstrument(final byte value)
+    public static int MainFractionId()
     {
-        CodecUtil.charPut(buffer, offset + 210, value);
+        return 37702;
+    }
+
+    public static String MainFractionMetaAttribute(final MetaAttribute metaAttribute)
+    {
+        switch (metaAttribute)
+        {
+            case EPOCH: return "unix";
+            case TIME_UNIT: return "nanosecond";
+            case SEMANTIC_TYPE: return "int";
+        }
+
+        return "";
+    }
+
+    public static short mainFractionNullValue()
+    {
+        return (short)255;
+    }
+
+    public static short mainFractionMinValue()
+    {
+        return (short)0;
+    }
+
+    public static short mainFractionMaxValue()
+    {
+        return (short)254;
+    }
+
+    public short mainFraction()
+    {
+        return CodecUtil.uint8Get(buffer, offset + 191);
+    }
+
+    public MDInstrumentDefinitionSpread56 mainFraction(final short value)
+    {
+        CodecUtil.uint8Put(buffer, offset + 191, value);
+        return this;
+    }
+
+    public static int SubFractionId()
+    {
+        return 37703;
+    }
+
+    public static String SubFractionMetaAttribute(final MetaAttribute metaAttribute)
+    {
+        switch (metaAttribute)
+        {
+            case EPOCH: return "unix";
+            case TIME_UNIT: return "nanosecond";
+            case SEMANTIC_TYPE: return "int";
+        }
+
+        return "";
+    }
+
+    public static short subFractionNullValue()
+    {
+        return (short)255;
+    }
+
+    public static short subFractionMinValue()
+    {
+        return (short)0;
+    }
+
+    public static short subFractionMaxValue()
+    {
+        return (short)254;
+    }
+
+    public short subFraction()
+    {
+        return CodecUtil.uint8Get(buffer, offset + 192);
+    }
+
+    public MDInstrumentDefinitionSpread56 subFraction(final short value)
+    {
+        CodecUtil.uint8Put(buffer, offset + 192, value);
         return this;
     }
 
@@ -2103,17 +1939,12 @@ public class MDInstrumentDefinitionOption41
 
     public int tradingReferenceDate()
     {
-        if (actingVersion < 6)
-        {
-            return 65535;
-        }
-
-        return CodecUtil.uint16Get(buffer, offset + 211, java.nio.ByteOrder.LITTLE_ENDIAN);
+        return CodecUtil.uint16Get(buffer, offset + 193, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 tradingReferenceDate(final int value)
+    public MDInstrumentDefinitionSpread56 tradingReferenceDate(final int value)
     {
-        CodecUtil.uint16Put(buffer, offset + 211, value, java.nio.ByteOrder.LITTLE_ENDIAN);
+        CodecUtil.uint16Put(buffer, offset + 193, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
     }
 
@@ -2140,7 +1971,7 @@ public class MDInstrumentDefinitionOption41
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDInstrumentDefinitionOption41 parentMessage;
+        private MDInstrumentDefinitionSpread56 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -2149,7 +1980,7 @@ public class MDInstrumentDefinitionOption41
         private int offset;
 
         public void wrapForDecode(
-            final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDInstrumentDefinitionSpread56 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2161,7 +1992,7 @@ public class MDInstrumentDefinitionOption41
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDInstrumentDefinitionSpread56 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2323,7 +2154,7 @@ public class MDInstrumentDefinitionOption41
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDInstrumentDefinitionOption41 parentMessage;
+        private MDInstrumentDefinitionSpread56 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -2332,7 +2163,7 @@ public class MDInstrumentDefinitionOption41
         private int offset;
 
         public void wrapForDecode(
-            final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDInstrumentDefinitionSpread56 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2344,7 +2175,7 @@ public class MDInstrumentDefinitionOption41
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDInstrumentDefinitionSpread56 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2564,7 +2395,7 @@ public class MDInstrumentDefinitionOption41
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDInstrumentDefinitionOption41 parentMessage;
+        private MDInstrumentDefinitionSpread56 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -2573,7 +2404,7 @@ public class MDInstrumentDefinitionOption41
         private int offset;
 
         public void wrapForDecode(
-            final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDInstrumentDefinitionSpread56 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2585,7 +2416,7 @@ public class MDInstrumentDefinitionOption41
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDInstrumentDefinitionSpread56 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2738,7 +2569,7 @@ public class MDInstrumentDefinitionOption41
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDInstrumentDefinitionOption41 parentMessage;
+        private MDInstrumentDefinitionSpread56 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -2747,7 +2578,7 @@ public class MDInstrumentDefinitionOption41
         private int offset;
 
         public void wrapForDecode(
-            final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDInstrumentDefinitionSpread56 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2759,7 +2590,7 @@ public class MDInstrumentDefinitionOption41
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDInstrumentDefinitionSpread56 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2895,30 +2726,30 @@ public class MDInstrumentDefinitionOption41
         }
     }
 
-    private final NoUnderlyings noUnderlyings = new NoUnderlyings();
+    private final NoLegs noLegs = new NoLegs();
 
-    public static long NoUnderlyingsId()
+    public static long NoLegsId()
     {
-        return 711;
+        return 555;
     }
 
-    public NoUnderlyings noUnderlyings()
+    public NoLegs noLegs()
     {
-        noUnderlyings.wrapForDecode(parentMessage, buffer, actingVersion);
-        return noUnderlyings;
+        noLegs.wrapForDecode(parentMessage, buffer, actingVersion);
+        return noLegs;
     }
 
-    public NoUnderlyings noUnderlyingsCount(final int count)
+    public NoLegs noLegsCount(final int count)
     {
-        noUnderlyings.wrapForEncode(parentMessage, buffer, count);
-        return noUnderlyings;
+        noLegs.wrapForEncode(parentMessage, buffer, count);
+        return noLegs;
     }
 
-    public static class NoUnderlyings implements Iterable<NoUnderlyings>, java.util.Iterator<NoUnderlyings>
+    public static class NoLegs implements Iterable<NoLegs>, java.util.Iterator<NoLegs>
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDInstrumentDefinitionOption41 parentMessage;
+        private MDInstrumentDefinitionSpread56 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -2927,7 +2758,7 @@ public class MDInstrumentDefinitionOption41
         private int offset;
 
         public void wrapForDecode(
-            final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDInstrumentDefinitionSpread56 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2939,17 +2770,17 @@ public class MDInstrumentDefinitionOption41
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDInstrumentDefinitionSpread56 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
             actingVersion = SCHEMA_VERSION;
             dimensions.wrap(buffer, parentMessage.limit(), actingVersion);
-            dimensions.blockLength((int)24);
+            dimensions.blockLength((int)18);
             dimensions.numInGroup((short)count);
             index = -1;
             this.count = count;
-            blockLength = 24;
+            blockLength = 18;
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
@@ -2960,7 +2791,7 @@ public class MDInstrumentDefinitionOption41
 
         public static int sbeBlockLength()
         {
-            return 24;
+            return 18;
         }
 
         public int actingBlockLength()
@@ -2974,7 +2805,7 @@ public class MDInstrumentDefinitionOption41
         }
 
         @Override
-        public java.util.Iterator<NoUnderlyings> iterator()
+        public java.util.Iterator<NoLegs> iterator()
         {
             return this;
         }
@@ -2992,7 +2823,7 @@ public class MDInstrumentDefinitionOption41
         }
 
         @Override
-        public NoUnderlyings next()
+        public NoLegs next()
         {
             if (index + 1 >= count)
             {
@@ -3006,12 +2837,12 @@ public class MDInstrumentDefinitionOption41
             return this;
         }
 
-        public static int UnderlyingSecurityIDId()
+        public static int LegSecurityIDId()
         {
-            return 309;
+            return 602;
         }
 
-        public static String UnderlyingSecurityIDMetaAttribute(final MetaAttribute metaAttribute)
+        public static String LegSecurityIDMetaAttribute(final MetaAttribute metaAttribute)
         {
             switch (metaAttribute)
             {
@@ -3023,38 +2854,38 @@ public class MDInstrumentDefinitionOption41
             return "";
         }
 
-        public static int underlyingSecurityIDNullValue()
+        public static int legSecurityIDNullValue()
         {
             return -2147483648;
         }
 
-        public static int underlyingSecurityIDMinValue()
+        public static int legSecurityIDMinValue()
         {
             return -2147483647;
         }
 
-        public static int underlyingSecurityIDMaxValue()
+        public static int legSecurityIDMaxValue()
         {
             return 2147483647;
         }
 
-        public int underlyingSecurityID()
+        public int legSecurityID()
         {
             return CodecUtil.int32Get(buffer, offset + 0, java.nio.ByteOrder.LITTLE_ENDIAN);
         }
 
-        public NoUnderlyings underlyingSecurityID(final int value)
+        public NoLegs legSecurityID(final int value)
         {
             CodecUtil.int32Put(buffer, offset + 0, value, java.nio.ByteOrder.LITTLE_ENDIAN);
             return this;
         }
 
-        public static int UnderlyingSecurityIDSourceId()
+        public static int LegSecurityIDSourceId()
         {
-            return 305;
+            return 603;
         }
 
-        public static String UnderlyingSecurityIDSourceMetaAttribute(final MetaAttribute metaAttribute)
+        public static String LegSecurityIDSourceMetaAttribute(final MetaAttribute metaAttribute)
         {
             switch (metaAttribute)
             {
@@ -3066,244 +2897,46 @@ public class MDInstrumentDefinitionOption41
             return "";
         }
 
-        public static byte underlyingSecurityIDSourceNullValue()
+        public static byte legSecurityIDSourceNullValue()
         {
             return (byte)0;
         }
 
-        public static byte underlyingSecurityIDSourceMinValue()
+        public static byte legSecurityIDSourceMinValue()
         {
             return (byte)32;
         }
 
-        public static byte underlyingSecurityIDSourceMaxValue()
+        public static byte legSecurityIDSourceMaxValue()
         {
             return (byte)126;
         }
 
-        private static final byte[] underlyingSecurityIDSourceValue = {56};
+        private static final byte[] legSecurityIDSourceValue = {56};
 
-        public static int underlyingSecurityIDSourceLength()
+        public static int legSecurityIDSourceLength()
         {
             return 1;
         }
 
-        public byte underlyingSecurityIDSource(final int index)
+        public byte legSecurityIDSource(final int index)
         {
-            return underlyingSecurityIDSourceValue[index];
+            return legSecurityIDSourceValue[index];
         }
 
-        public int getUnderlyingSecurityIDSource(final byte[] dst, final int offset, final int length)
+        public int getLegSecurityIDSource(final byte[] dst, final int offset, final int length)
         {
             final int bytesCopied = Math.min(length, 1);
-            System.arraycopy(underlyingSecurityIDSourceValue, 0, dst, offset, bytesCopied);
+            System.arraycopy(legSecurityIDSourceValue, 0, dst, offset, bytesCopied);
             return bytesCopied;
         }
 
-        public static int UnderlyingSymbolId()
+        public static int LegSideId()
         {
-            return 311;
+            return 624;
         }
 
-        public static String UnderlyingSymbolMetaAttribute(final MetaAttribute metaAttribute)
-        {
-            switch (metaAttribute)
-            {
-                case EPOCH: return "unix";
-                case TIME_UNIT: return "nanosecond";
-                case SEMANTIC_TYPE: return "String";
-            }
-
-            return "";
-        }
-
-        public static byte underlyingSymbolNullValue()
-        {
-            return (byte)0;
-        }
-
-        public static byte underlyingSymbolMinValue()
-        {
-            return (byte)32;
-        }
-
-        public static byte underlyingSymbolMaxValue()
-        {
-            return (byte)126;
-        }
-
-        public static int underlyingSymbolLength()
-        {
-            return 20;
-        }
-
-        public byte underlyingSymbol(final int index)
-        {
-            if (index < 0 || index >= 20)
-            {
-                throw new IndexOutOfBoundsException("index out of range: index=" + index);
-            }
-
-            return CodecUtil.charGet(buffer, this.offset + 4 + (index * 1));
-        }
-
-        public void underlyingSymbol(final int index, final byte value)
-        {
-            if (index < 0 || index >= 20)
-            {
-                throw new IndexOutOfBoundsException("index out of range: index=" + index);
-            }
-
-            CodecUtil.charPut(buffer, this.offset + 4 + (index * 1), value);
-        }
-
-        public static String underlyingSymbolCharacterEncoding()
-        {
-            return "UTF-8";
-        }
-
-        public int getUnderlyingSymbol(final byte[] dst, final int dstOffset)
-        {
-            final int length = 20;
-            if (dstOffset < 0 || dstOffset > (dst.length - length))
-            {
-                throw new IndexOutOfBoundsException(                    "dstOffset out of range for copy: offset=" + dstOffset);
-            }
-
-            CodecUtil.charsGet(buffer, this.offset + 4, dst, dstOffset, length);
-            return length;
-        }
-
-        public NoUnderlyings putUnderlyingSymbol(final byte[] src, final int srcOffset)
-        {
-            final int length = 20;
-            if (srcOffset < 0 || srcOffset > (src.length - length))
-            {
-                throw new IndexOutOfBoundsException(                    "srcOffset out of range for copy: offset=" + srcOffset);
-            }
-
-            CodecUtil.charsPut(buffer, this.offset + 4, src, srcOffset, length);
-            return this;
-        }
-    }
-
-    private final NoRelatedInstruments noRelatedInstruments = new NoRelatedInstruments();
-
-    public static long NoRelatedInstrumentsId()
-    {
-        return 1647;
-    }
-
-    public NoRelatedInstruments noRelatedInstruments()
-    {
-        noRelatedInstruments.wrapForDecode(parentMessage, buffer, actingVersion);
-        return noRelatedInstruments;
-    }
-
-    public NoRelatedInstruments noRelatedInstrumentsCount(final int count)
-    {
-        noRelatedInstruments.wrapForEncode(parentMessage, buffer, count);
-        return noRelatedInstruments;
-    }
-
-    public static class NoRelatedInstruments implements Iterable<NoRelatedInstruments>, java.util.Iterator<NoRelatedInstruments>
-    {
-        private static final int HEADER_SIZE = 3;
-        private final GroupSize dimensions = new GroupSize();
-        private MDInstrumentDefinitionOption41 parentMessage;
-        private DirectBuffer buffer;
-        private int blockLength;
-        private int actingVersion;
-        private int count;
-        private int index;
-        private int offset;
-
-        public void wrapForDecode(
-            final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int actingVersion)
-        {
-            this.parentMessage = parentMessage;
-            this.buffer = buffer;
-            dimensions.wrap(buffer, parentMessage.limit(), actingVersion);
-            blockLength = dimensions.blockLength();
-            count = dimensions.numInGroup();
-            this.actingVersion = actingVersion;
-            index = -1;
-            parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
-        }
-
-        public void wrapForEncode(final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int count)
-        {
-            this.parentMessage = parentMessage;
-            this.buffer = buffer;
-            actingVersion = SCHEMA_VERSION;
-            dimensions.wrap(buffer, parentMessage.limit(), actingVersion);
-            dimensions.blockLength((int)24);
-            dimensions.numInGroup((short)count);
-            index = -1;
-            this.count = count;
-            blockLength = 24;
-            parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
-        }
-
-        public static int sbeHeaderSize()
-        {
-            return HEADER_SIZE;
-        }
-
-        public static int sbeBlockLength()
-        {
-            return 24;
-        }
-
-        public int actingBlockLength()
-        {
-            return blockLength;
-        }
-
-        public int count()
-        {
-            return count;
-        }
-
-        @Override
-        public java.util.Iterator<NoRelatedInstruments> iterator()
-        {
-            return this;
-        }
-
-        @Override
-        public void remove()
-        {
-            throw new UnsupportedOperationException();
-        }
-
-        @Override
-        public boolean hasNext()
-        {
-            return (index + 1) < count;
-        }
-
-        @Override
-        public NoRelatedInstruments next()
-        {
-            if (index + 1 >= count)
-            {
-                throw new java.util.NoSuchElementException();
-            }
-
-            offset = parentMessage.limit();
-            parentMessage.limit(offset + blockLength);
-            ++index;
-
-            return this;
-        }
-
-        public static int RelatedSecurityIDId()
-        {
-            return 1650;
-        }
-
-        public static String RelatedSecurityIDMetaAttribute(final MetaAttribute metaAttribute)
+        public static String LegSideMetaAttribute(final MetaAttribute metaAttribute)
         {
             switch (metaAttribute)
             {
@@ -3315,167 +2948,108 @@ public class MDInstrumentDefinitionOption41
             return "";
         }
 
-        public static int relatedSecurityIDNullValue()
+        public LegSide legSide()
         {
-            return -2147483648;
+            return LegSide.get(CodecUtil.uint8Get(buffer, offset + 4));
         }
 
-        public static int relatedSecurityIDMinValue()
+        public NoLegs legSide(final LegSide value)
         {
-            return -2147483647;
-        }
-
-        public static int relatedSecurityIDMaxValue()
-        {
-            return 2147483647;
-        }
-
-        public int relatedSecurityID()
-        {
-            return CodecUtil.int32Get(buffer, offset + 0, java.nio.ByteOrder.LITTLE_ENDIAN);
-        }
-
-        public NoRelatedInstruments relatedSecurityID(final int value)
-        {
-            CodecUtil.int32Put(buffer, offset + 0, value, java.nio.ByteOrder.LITTLE_ENDIAN);
+            CodecUtil.uint8Put(buffer, offset + 4, value.value());
             return this;
         }
 
-        public static int RelatedSecurityIDSourceId()
+        public static int LegRatioQtyId()
         {
-            return 1651;
+            return 623;
         }
 
-        public static String RelatedSecurityIDSourceMetaAttribute(final MetaAttribute metaAttribute)
+        public static String LegRatioQtyMetaAttribute(final MetaAttribute metaAttribute)
         {
             switch (metaAttribute)
             {
                 case EPOCH: return "unix";
                 case TIME_UNIT: return "nanosecond";
-                case SEMANTIC_TYPE: return "char";
+                case SEMANTIC_TYPE: return "Qty";
             }
 
             return "";
         }
 
-        public static byte relatedSecurityIDSourceNullValue()
+        public static byte legRatioQtyNullValue()
         {
-            return (byte)0;
+            return (byte)-128;
         }
 
-        public static byte relatedSecurityIDSourceMinValue()
+        public static byte legRatioQtyMinValue()
         {
-            return (byte)32;
+            return (byte)-127;
         }
 
-        public static byte relatedSecurityIDSourceMaxValue()
+        public static byte legRatioQtyMaxValue()
         {
-            return (byte)126;
+            return (byte)127;
         }
 
-        private static final byte[] relatedSecurityIDSourceValue = {56};
-
-        public static int relatedSecurityIDSourceLength()
+        public byte legRatioQty()
         {
-            return 1;
+            return CodecUtil.int8Get(buffer, offset + 5);
         }
 
-        public byte relatedSecurityIDSource(final int index)
+        public NoLegs legRatioQty(final byte value)
         {
-            return relatedSecurityIDSourceValue[index];
+            CodecUtil.int8Put(buffer, offset + 5, value);
+            return this;
         }
 
-        public int getRelatedSecurityIDSource(final byte[] dst, final int offset, final int length)
+        public static int LegPriceId()
         {
-            final int bytesCopied = Math.min(length, 1);
-            System.arraycopy(relatedSecurityIDSourceValue, 0, dst, offset, bytesCopied);
-            return bytesCopied;
+            return 566;
         }
 
-        public static int RelatedSymbolId()
-        {
-            return 1649;
-        }
-
-        public static String RelatedSymbolMetaAttribute(final MetaAttribute metaAttribute)
+        public static String LegPriceMetaAttribute(final MetaAttribute metaAttribute)
         {
             switch (metaAttribute)
             {
                 case EPOCH: return "unix";
                 case TIME_UNIT: return "nanosecond";
-                case SEMANTIC_TYPE: return "String";
+                case SEMANTIC_TYPE: return "Price";
             }
 
             return "";
         }
 
-        public static byte relatedSymbolNullValue()
+        private final PRICENULL9 legPrice = new PRICENULL9();
+
+        public PRICENULL9 legPrice()
         {
-            return (byte)0;
+            legPrice.wrap(buffer, offset + 6, actingVersion);
+            return legPrice;
         }
 
-        public static byte relatedSymbolMinValue()
+        public static int LegOptionDeltaId()
         {
-            return (byte)32;
+            return 1017;
         }
 
-        public static byte relatedSymbolMaxValue()
+        public static String LegOptionDeltaMetaAttribute(final MetaAttribute metaAttribute)
         {
-            return (byte)126;
-        }
-
-        public static int relatedSymbolLength()
-        {
-            return 20;
-        }
-
-        public byte relatedSymbol(final int index)
-        {
-            if (index < 0 || index >= 20)
+            switch (metaAttribute)
             {
-                throw new IndexOutOfBoundsException("index out of range: index=" + index);
+                case EPOCH: return "unix";
+                case TIME_UNIT: return "nanosecond";
+                case SEMANTIC_TYPE: return "Qty";
             }
 
-            return CodecUtil.charGet(buffer, this.offset + 4 + (index * 1));
+            return "";
         }
 
-        public void relatedSymbol(final int index, final byte value)
+        private final DecimalQty legOptionDelta = new DecimalQty();
+
+        public DecimalQty legOptionDelta()
         {
-            if (index < 0 || index >= 20)
-            {
-                throw new IndexOutOfBoundsException("index out of range: index=" + index);
-            }
-
-            CodecUtil.charPut(buffer, this.offset + 4 + (index * 1), value);
-        }
-
-        public static String relatedSymbolCharacterEncoding()
-        {
-            return "UTF-8";
-        }
-
-        public int getRelatedSymbol(final byte[] dst, final int dstOffset)
-        {
-            final int length = 20;
-            if (dstOffset < 0 || dstOffset > (dst.length - length))
-            {
-                throw new IndexOutOfBoundsException(                    "dstOffset out of range for copy: offset=" + dstOffset);
-            }
-
-            CodecUtil.charsGet(buffer, this.offset + 4, dst, dstOffset, length);
-            return length;
-        }
-
-        public NoRelatedInstruments putRelatedSymbol(final byte[] src, final int srcOffset)
-        {
-            final int length = 20;
-            if (srcOffset < 0 || srcOffset > (src.length - length))
-            {
-                throw new IndexOutOfBoundsException(                    "srcOffset out of range for copy: offset=" + srcOffset);
-            }
-
-            CodecUtil.charsPut(buffer, this.offset + 4, src, srcOffset, length);
-            return this;
+            legOptionDelta.wrap(buffer, offset + 14, actingVersion);
+            return legOptionDelta;
         }
     }
 }

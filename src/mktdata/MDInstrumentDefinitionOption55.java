@@ -3,14 +3,14 @@ package mktdata;
 
 import uk.co.real_logic.sbe.codec.java.*;
 
-public class MDInstrumentDefinitionOption41
+public class MDInstrumentDefinitionOption55
 {
     public static final int BLOCK_LENGTH = 213;
-    public static final int TEMPLATE_ID = 41;
+    public static final int TEMPLATE_ID = 55;
     public static final int SCHEMA_ID = 1;
     public static final int SCHEMA_VERSION = 9;
 
-    private final MDInstrumentDefinitionOption41 parentMessage = this;
+    private final MDInstrumentDefinitionOption55 parentMessage = this;
     private DirectBuffer buffer;
     private int offset;
     private int limit;
@@ -47,7 +47,7 @@ public class MDInstrumentDefinitionOption41
         return offset;
     }
 
-    public MDInstrumentDefinitionOption41 wrapForEncode(final DirectBuffer buffer, final int offset)
+    public MDInstrumentDefinitionOption55 wrapForEncode(final DirectBuffer buffer, final int offset)
     {
         this.buffer = buffer;
         this.offset = offset;
@@ -58,7 +58,7 @@ public class MDInstrumentDefinitionOption41
         return this;
     }
 
-    public MDInstrumentDefinitionOption41 wrapForDecode(
+    public MDInstrumentDefinitionOption55 wrapForDecode(
         final DirectBuffer buffer, final int offset, final int actingBlockLength, final int actingVersion)
     {
         this.buffer = buffer;
@@ -148,7 +148,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint32Get(buffer, offset + 1, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 totNumReports(final long value)
+    public MDInstrumentDefinitionOption55 totNumReports(final long value)
     {
         CodecUtil.uint32Put(buffer, offset + 1, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -176,7 +176,7 @@ public class MDInstrumentDefinitionOption41
         return SecurityUpdateAction.get(CodecUtil.charGet(buffer, offset + 5));
     }
 
-    public MDInstrumentDefinitionOption41 securityUpdateAction(final SecurityUpdateAction value)
+    public MDInstrumentDefinitionOption55 securityUpdateAction(final SecurityUpdateAction value)
     {
         CodecUtil.charPut(buffer, offset + 5, value.value());
         return this;
@@ -219,7 +219,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint64Get(buffer, offset + 6, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 lastUpdateTime(final long value)
+    public MDInstrumentDefinitionOption55 lastUpdateTime(final long value)
     {
         CodecUtil.uint64Put(buffer, offset + 6, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -247,7 +247,7 @@ public class MDInstrumentDefinitionOption41
         return SecurityTradingStatus.get(CodecUtil.uint8Get(buffer, offset + 14));
     }
 
-    public MDInstrumentDefinitionOption41 mDSecurityTradingStatus(final SecurityTradingStatus value)
+    public MDInstrumentDefinitionOption55 mDSecurityTradingStatus(final SecurityTradingStatus value)
     {
         CodecUtil.uint8Put(buffer, offset + 14, value.value());
         return this;
@@ -290,7 +290,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.int16Get(buffer, offset + 15, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 applID(final short value)
+    public MDInstrumentDefinitionOption55 applID(final short value)
     {
         CodecUtil.int16Put(buffer, offset + 15, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -333,7 +333,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint8Get(buffer, offset + 17);
     }
 
-    public MDInstrumentDefinitionOption41 marketSegmentID(final short value)
+    public MDInstrumentDefinitionOption55 marketSegmentID(final short value)
     {
         CodecUtil.uint8Put(buffer, offset + 17, value);
         return this;
@@ -376,7 +376,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint8Get(buffer, offset + 18);
     }
 
-    public MDInstrumentDefinitionOption41 underlyingProduct(final short value)
+    public MDInstrumentDefinitionOption55 underlyingProduct(final short value)
     {
         CodecUtil.uint8Put(buffer, offset + 18, value);
         return this;
@@ -456,7 +456,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putSecurityExchange(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionOption55 putSecurityExchange(final byte[] src, final int srcOffset)
     {
         final int length = 4;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -542,7 +542,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putSecurityGroup(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionOption55 putSecurityGroup(final byte[] src, final int srcOffset)
     {
         final int length = 6;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -628,7 +628,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putAsset(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionOption55 putAsset(final byte[] src, final int srcOffset)
     {
         final int length = 6;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -714,7 +714,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putSymbol(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionOption55 putSymbol(final byte[] src, final int srcOffset)
     {
         final int length = 20;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -763,7 +763,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.int32Get(buffer, offset + 55, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 securityID(final int value)
+    public MDInstrumentDefinitionOption55 securityID(final int value)
     {
         CodecUtil.int32Put(buffer, offset + 55, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -894,7 +894,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putSecurityType(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionOption55 putSecurityType(final byte[] src, final int srcOffset)
     {
         final int length = 6;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -980,7 +980,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putCFICode(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionOption55 putCFICode(final byte[] src, final int srcOffset)
     {
         final int length = 6;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -1014,7 +1014,7 @@ public class MDInstrumentDefinitionOption41
         return PutOrCall.get(CodecUtil.uint8Get(buffer, offset + 71));
     }
 
-    public MDInstrumentDefinitionOption41 putOrCall(final PutOrCall value)
+    public MDInstrumentDefinitionOption55 putOrCall(final PutOrCall value)
     {
         CodecUtil.uint8Put(buffer, offset + 71, value.value());
         return this;
@@ -1119,7 +1119,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putCurrency(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionOption55 putCurrency(final byte[] src, final int srcOffset)
     {
         final int length = 3;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -1148,9 +1148,9 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final PRICENULL strikePrice = new PRICENULL();
+    private final PRICENULL9 strikePrice = new PRICENULL9();
 
-    public PRICENULL strikePrice()
+    public PRICENULL9 strikePrice()
     {
         strikePrice.wrap(buffer, offset + 80, actingVersion);
         return strikePrice;
@@ -1230,7 +1230,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putStrikeCurrency(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionOption55 putStrikeCurrency(final byte[] src, final int srcOffset)
     {
         final int length = 3;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -1316,7 +1316,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putSettlCurrency(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionOption55 putSettlCurrency(final byte[] src, final int srcOffset)
     {
         final int length = 3;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -1345,9 +1345,9 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final PRICENULL minCabPrice = new PRICENULL();
+    private final PRICENULL9 minCabPrice = new PRICENULL9();
 
-    public PRICENULL minCabPrice()
+    public PRICENULL9 minCabPrice()
     {
         minCabPrice.wrap(buffer, offset + 94, actingVersion);
         return minCabPrice;
@@ -1390,7 +1390,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.charGet(buffer, offset + 102);
     }
 
-    public MDInstrumentDefinitionOption41 matchAlgorithm(final byte value)
+    public MDInstrumentDefinitionOption55 matchAlgorithm(final byte value)
     {
         CodecUtil.charPut(buffer, offset + 102, value);
         return this;
@@ -1433,7 +1433,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint32Get(buffer, offset + 103, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 minTradeVol(final long value)
+    public MDInstrumentDefinitionOption55 minTradeVol(final long value)
     {
         CodecUtil.uint32Put(buffer, offset + 103, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -1476,7 +1476,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint32Get(buffer, offset + 107, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 maxTradeVol(final long value)
+    public MDInstrumentDefinitionOption55 maxTradeVol(final long value)
     {
         CodecUtil.uint32Put(buffer, offset + 107, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -1499,9 +1499,9 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final PRICENULL minPriceIncrement = new PRICENULL();
+    private final PRICENULL9 minPriceIncrement = new PRICENULL9();
 
-    public PRICENULL minPriceIncrement()
+    public PRICENULL9 minPriceIncrement()
     {
         minPriceIncrement.wrap(buffer, offset + 111, actingVersion);
         return minPriceIncrement;
@@ -1524,9 +1524,9 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final PRICENULL minPriceIncrementAmount = new PRICENULL();
+    private final PRICENULL9 minPriceIncrementAmount = new PRICENULL9();
 
-    public PRICENULL minPriceIncrementAmount()
+    public PRICENULL9 minPriceIncrementAmount()
     {
         minPriceIncrementAmount.wrap(buffer, offset + 119, actingVersion);
         return minPriceIncrementAmount;
@@ -1549,9 +1549,9 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final FLOAT displayFactor = new FLOAT();
+    private final Decimal9 displayFactor = new Decimal9();
 
-    public FLOAT displayFactor()
+    public Decimal9 displayFactor()
     {
         displayFactor.wrap(buffer, offset + 127, actingVersion);
         return displayFactor;
@@ -1594,7 +1594,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.int8Get(buffer, offset + 135);
     }
 
-    public MDInstrumentDefinitionOption41 tickRule(final byte value)
+    public MDInstrumentDefinitionOption55 tickRule(final byte value)
     {
         CodecUtil.int8Put(buffer, offset + 135, value);
         return this;
@@ -1637,7 +1637,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint8Get(buffer, offset + 136);
     }
 
-    public MDInstrumentDefinitionOption41 mainFraction(final short value)
+    public MDInstrumentDefinitionOption55 mainFraction(final short value)
     {
         CodecUtil.uint8Put(buffer, offset + 136, value);
         return this;
@@ -1680,7 +1680,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint8Get(buffer, offset + 137);
     }
 
-    public MDInstrumentDefinitionOption41 subFraction(final short value)
+    public MDInstrumentDefinitionOption55 subFraction(final short value)
     {
         CodecUtil.uint8Put(buffer, offset + 137, value);
         return this;
@@ -1723,7 +1723,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.uint8Get(buffer, offset + 138);
     }
 
-    public MDInstrumentDefinitionOption41 priceDisplayFormat(final short value)
+    public MDInstrumentDefinitionOption55 priceDisplayFormat(final short value)
     {
         CodecUtil.uint8Put(buffer, offset + 138, value);
         return this;
@@ -1803,7 +1803,7 @@ public class MDInstrumentDefinitionOption41
         return length;
     }
 
-    public MDInstrumentDefinitionOption41 putUnitOfMeasure(final byte[] src, final int srcOffset)
+    public MDInstrumentDefinitionOption55 putUnitOfMeasure(final byte[] src, final int srcOffset)
     {
         final int length = 30;
         if (srcOffset < 0 || srcOffset > (src.length - length))
@@ -1832,9 +1832,9 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final PRICENULL unitOfMeasureQty = new PRICENULL();
+    private final Decimal9NULL unitOfMeasureQty = new Decimal9NULL();
 
-    public PRICENULL unitOfMeasureQty()
+    public Decimal9NULL unitOfMeasureQty()
     {
         unitOfMeasureQty.wrap(buffer, offset + 169, actingVersion);
         return unitOfMeasureQty;
@@ -1857,9 +1857,9 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final PRICENULL tradingReferencePrice = new PRICENULL();
+    private final PRICENULL9 tradingReferencePrice = new PRICENULL9();
 
-    public PRICENULL tradingReferencePrice()
+    public PRICENULL9 tradingReferencePrice()
     {
         tradingReferencePrice.wrap(buffer, offset + 177, actingVersion);
         return tradingReferencePrice;
@@ -1927,7 +1927,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.int32Get(buffer, offset + 186, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 clearedVolume(final int value)
+    public MDInstrumentDefinitionOption55 clearedVolume(final int value)
     {
         CodecUtil.int32Put(buffer, offset + 186, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -1970,7 +1970,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.int32Get(buffer, offset + 190, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 openInterestQty(final int value)
+    public MDInstrumentDefinitionOption55 openInterestQty(final int value)
     {
         CodecUtil.int32Put(buffer, offset + 190, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -1993,9 +1993,9 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final PRICENULL lowLimitPrice = new PRICENULL();
+    private final PRICENULL9 lowLimitPrice = new PRICENULL9();
 
-    public PRICENULL lowLimitPrice()
+    public PRICENULL9 lowLimitPrice()
     {
         lowLimitPrice.wrap(buffer, offset + 194, actingVersion);
         return lowLimitPrice;
@@ -2018,9 +2018,9 @@ public class MDInstrumentDefinitionOption41
         return "";
     }
 
-    private final PRICENULL highLimitPrice = new PRICENULL();
+    private final PRICENULL9 highLimitPrice = new PRICENULL9();
 
-    public PRICENULL highLimitPrice()
+    public PRICENULL9 highLimitPrice()
     {
         highLimitPrice.wrap(buffer, offset + 202, actingVersion);
         return highLimitPrice;
@@ -2063,7 +2063,7 @@ public class MDInstrumentDefinitionOption41
         return CodecUtil.charGet(buffer, offset + 210);
     }
 
-    public MDInstrumentDefinitionOption41 userDefinedInstrument(final byte value)
+    public MDInstrumentDefinitionOption55 userDefinedInstrument(final byte value)
     {
         CodecUtil.charPut(buffer, offset + 210, value);
         return this;
@@ -2103,15 +2103,10 @@ public class MDInstrumentDefinitionOption41
 
     public int tradingReferenceDate()
     {
-        if (actingVersion < 6)
-        {
-            return 65535;
-        }
-
         return CodecUtil.uint16Get(buffer, offset + 211, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDInstrumentDefinitionOption41 tradingReferenceDate(final int value)
+    public MDInstrumentDefinitionOption55 tradingReferenceDate(final int value)
     {
         CodecUtil.uint16Put(buffer, offset + 211, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -2140,7 +2135,7 @@ public class MDInstrumentDefinitionOption41
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDInstrumentDefinitionOption41 parentMessage;
+        private MDInstrumentDefinitionOption55 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -2149,7 +2144,7 @@ public class MDInstrumentDefinitionOption41
         private int offset;
 
         public void wrapForDecode(
-            final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDInstrumentDefinitionOption55 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2161,7 +2156,7 @@ public class MDInstrumentDefinitionOption41
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDInstrumentDefinitionOption55 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2323,7 +2318,7 @@ public class MDInstrumentDefinitionOption41
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDInstrumentDefinitionOption41 parentMessage;
+        private MDInstrumentDefinitionOption55 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -2332,7 +2327,7 @@ public class MDInstrumentDefinitionOption41
         private int offset;
 
         public void wrapForDecode(
-            final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDInstrumentDefinitionOption55 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2344,7 +2339,7 @@ public class MDInstrumentDefinitionOption41
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDInstrumentDefinitionOption55 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2564,7 +2559,7 @@ public class MDInstrumentDefinitionOption41
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDInstrumentDefinitionOption41 parentMessage;
+        private MDInstrumentDefinitionOption55 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -2573,7 +2568,7 @@ public class MDInstrumentDefinitionOption41
         private int offset;
 
         public void wrapForDecode(
-            final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDInstrumentDefinitionOption55 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2585,7 +2580,7 @@ public class MDInstrumentDefinitionOption41
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDInstrumentDefinitionOption55 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2738,7 +2733,7 @@ public class MDInstrumentDefinitionOption41
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDInstrumentDefinitionOption41 parentMessage;
+        private MDInstrumentDefinitionOption55 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -2747,7 +2742,7 @@ public class MDInstrumentDefinitionOption41
         private int offset;
 
         public void wrapForDecode(
-            final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDInstrumentDefinitionOption55 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2759,7 +2754,7 @@ public class MDInstrumentDefinitionOption41
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDInstrumentDefinitionOption55 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2918,7 +2913,7 @@ public class MDInstrumentDefinitionOption41
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDInstrumentDefinitionOption41 parentMessage;
+        private MDInstrumentDefinitionOption55 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -2927,7 +2922,7 @@ public class MDInstrumentDefinitionOption41
         private int offset;
 
         public void wrapForDecode(
-            final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDInstrumentDefinitionOption55 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -2939,7 +2934,7 @@ public class MDInstrumentDefinitionOption41
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDInstrumentDefinitionOption55 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -3210,7 +3205,7 @@ public class MDInstrumentDefinitionOption41
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDInstrumentDefinitionOption41 parentMessage;
+        private MDInstrumentDefinitionOption55 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -3219,7 +3214,7 @@ public class MDInstrumentDefinitionOption41
         private int offset;
 
         public void wrapForDecode(
-            final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDInstrumentDefinitionOption55 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -3231,7 +3226,7 @@ public class MDInstrumentDefinitionOption41
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDInstrumentDefinitionOption41 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDInstrumentDefinitionOption55 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;

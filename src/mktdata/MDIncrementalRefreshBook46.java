@@ -3,14 +3,14 @@ package mktdata;
 
 import uk.co.real_logic.sbe.codec.java.*;
 
-public class MDIncrementalRefreshBook32
+public class MDIncrementalRefreshBook46
 {
     public static final int BLOCK_LENGTH = 11;
-    public static final int TEMPLATE_ID = 32;
+    public static final int TEMPLATE_ID = 46;
     public static final int SCHEMA_ID = 1;
     public static final int SCHEMA_VERSION = 9;
 
-    private final MDIncrementalRefreshBook32 parentMessage = this;
+    private final MDIncrementalRefreshBook46 parentMessage = this;
     private DirectBuffer buffer;
     private int offset;
     private int limit;
@@ -47,7 +47,7 @@ public class MDIncrementalRefreshBook32
         return offset;
     }
 
-    public MDIncrementalRefreshBook32 wrapForEncode(final DirectBuffer buffer, final int offset)
+    public MDIncrementalRefreshBook46 wrapForEncode(final DirectBuffer buffer, final int offset)
     {
         this.buffer = buffer;
         this.offset = offset;
@@ -58,7 +58,7 @@ public class MDIncrementalRefreshBook32
         return this;
     }
 
-    public MDIncrementalRefreshBook32 wrapForDecode(
+    public MDIncrementalRefreshBook46 wrapForDecode(
         final DirectBuffer buffer, final int offset, final int actingBlockLength, final int actingVersion)
     {
         this.buffer = buffer;
@@ -123,7 +123,7 @@ public class MDIncrementalRefreshBook32
         return CodecUtil.uint64Get(buffer, offset + 0, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDIncrementalRefreshBook32 transactTime(final long value)
+    public MDIncrementalRefreshBook46 transactTime(final long value)
     {
         CodecUtil.uint64Put(buffer, offset + 0, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -177,7 +177,7 @@ public class MDIncrementalRefreshBook32
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDIncrementalRefreshBook32 parentMessage;
+        private MDIncrementalRefreshBook46 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -186,7 +186,7 @@ public class MDIncrementalRefreshBook32
         private int offset;
 
         public void wrapForDecode(
-            final MDIncrementalRefreshBook32 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDIncrementalRefreshBook46 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -198,7 +198,7 @@ public class MDIncrementalRefreshBook32
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDIncrementalRefreshBook32 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDIncrementalRefreshBook46 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -282,9 +282,9 @@ public class MDIncrementalRefreshBook32
             return "";
         }
 
-        private final PRICENULL mDEntryPx = new PRICENULL();
+        private final PRICENULL9 mDEntryPx = new PRICENULL9();
 
-        public PRICENULL mDEntryPx()
+        public PRICENULL9 mDEntryPx()
         {
             mDEntryPx.wrap(buffer, offset + 0, actingVersion);
             return mDEntryPx;
@@ -585,7 +585,7 @@ public class MDIncrementalRefreshBook32
     {
         private static final int HEADER_SIZE = 8;
         private final GroupSize8Byte dimensions = new GroupSize8Byte();
-        private MDIncrementalRefreshBook32 parentMessage;
+        private MDIncrementalRefreshBook46 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -594,7 +594,7 @@ public class MDIncrementalRefreshBook32
         private int offset;
 
         public void wrapForDecode(
-            final MDIncrementalRefreshBook32 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDIncrementalRefreshBook46 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -606,7 +606,7 @@ public class MDIncrementalRefreshBook32
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDIncrementalRefreshBook32 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDIncrementalRefreshBook46 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -770,7 +770,7 @@ public class MDIncrementalRefreshBook32
             {
                 case EPOCH: return "unix";
                 case TIME_UNIT: return "nanosecond";
-                case SEMANTIC_TYPE: return "int";
+                case SEMANTIC_TYPE: return "Qty";
             }
 
             return "";

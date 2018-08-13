@@ -3,14 +3,14 @@ package mktdata;
 
 import uk.co.real_logic.sbe.codec.java.*;
 
-public class SnapshotFullRefresh38
+public class SnapshotFullRefresh52
 {
     public static final int BLOCK_LENGTH = 59;
-    public static final int TEMPLATE_ID = 38;
+    public static final int TEMPLATE_ID = 52;
     public static final int SCHEMA_ID = 1;
     public static final int SCHEMA_VERSION = 9;
 
-    private final SnapshotFullRefresh38 parentMessage = this;
+    private final SnapshotFullRefresh52 parentMessage = this;
     private DirectBuffer buffer;
     private int offset;
     private int limit;
@@ -47,7 +47,7 @@ public class SnapshotFullRefresh38
         return offset;
     }
 
-    public SnapshotFullRefresh38 wrapForEncode(final DirectBuffer buffer, final int offset)
+    public SnapshotFullRefresh52 wrapForEncode(final DirectBuffer buffer, final int offset)
     {
         this.buffer = buffer;
         this.offset = offset;
@@ -58,7 +58,7 @@ public class SnapshotFullRefresh38
         return this;
     }
 
-    public SnapshotFullRefresh38 wrapForDecode(
+    public SnapshotFullRefresh52 wrapForDecode(
         final DirectBuffer buffer, final int offset, final int actingBlockLength, final int actingVersion)
     {
         this.buffer = buffer;
@@ -123,7 +123,7 @@ public class SnapshotFullRefresh38
         return CodecUtil.uint32Get(buffer, offset + 0, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public SnapshotFullRefresh38 lastMsgSeqNumProcessed(final long value)
+    public SnapshotFullRefresh52 lastMsgSeqNumProcessed(final long value)
     {
         CodecUtil.uint32Put(buffer, offset + 0, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -166,7 +166,7 @@ public class SnapshotFullRefresh38
         return CodecUtil.uint32Get(buffer, offset + 4, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public SnapshotFullRefresh38 totNumReports(final long value)
+    public SnapshotFullRefresh52 totNumReports(final long value)
     {
         CodecUtil.uint32Put(buffer, offset + 4, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -209,7 +209,7 @@ public class SnapshotFullRefresh38
         return CodecUtil.int32Get(buffer, offset + 8, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public SnapshotFullRefresh38 securityID(final int value)
+    public SnapshotFullRefresh52 securityID(final int value)
     {
         CodecUtil.int32Put(buffer, offset + 8, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -226,7 +226,7 @@ public class SnapshotFullRefresh38
         {
             case EPOCH: return "unix";
             case TIME_UNIT: return "nanosecond";
-            case SEMANTIC_TYPE: return "SeqNum";
+            case SEMANTIC_TYPE: return "int";
         }
 
         return "";
@@ -252,7 +252,7 @@ public class SnapshotFullRefresh38
         return CodecUtil.uint32Get(buffer, offset + 12, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public SnapshotFullRefresh38 rptSeq(final long value)
+    public SnapshotFullRefresh52 rptSeq(final long value)
     {
         CodecUtil.uint32Put(buffer, offset + 12, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -295,7 +295,7 @@ public class SnapshotFullRefresh38
         return CodecUtil.uint64Get(buffer, offset + 16, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public SnapshotFullRefresh38 transactTime(final long value)
+    public SnapshotFullRefresh52 transactTime(final long value)
     {
         CodecUtil.uint64Put(buffer, offset + 16, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -338,7 +338,7 @@ public class SnapshotFullRefresh38
         return CodecUtil.uint64Get(buffer, offset + 24, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public SnapshotFullRefresh38 lastUpdateTime(final long value)
+    public SnapshotFullRefresh52 lastUpdateTime(final long value)
     {
         CodecUtil.uint64Put(buffer, offset + 24, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -381,7 +381,7 @@ public class SnapshotFullRefresh38
         return CodecUtil.uint16Get(buffer, offset + 32, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public SnapshotFullRefresh38 tradeDate(final int value)
+    public SnapshotFullRefresh52 tradeDate(final int value)
     {
         CodecUtil.uint16Put(buffer, offset + 32, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -409,7 +409,7 @@ public class SnapshotFullRefresh38
         return SecurityTradingStatus.get(CodecUtil.uint8Get(buffer, offset + 34));
     }
 
-    public SnapshotFullRefresh38 mDSecurityTradingStatus(final SecurityTradingStatus value)
+    public SnapshotFullRefresh52 mDSecurityTradingStatus(final SecurityTradingStatus value)
     {
         CodecUtil.uint8Put(buffer, offset + 34, value.value());
         return this;
@@ -432,9 +432,9 @@ public class SnapshotFullRefresh38
         return "";
     }
 
-    private final PRICENULL highLimitPrice = new PRICENULL();
+    private final PRICENULL9 highLimitPrice = new PRICENULL9();
 
-    public PRICENULL highLimitPrice()
+    public PRICENULL9 highLimitPrice()
     {
         highLimitPrice.wrap(buffer, offset + 35, actingVersion);
         return highLimitPrice;
@@ -457,9 +457,9 @@ public class SnapshotFullRefresh38
         return "";
     }
 
-    private final PRICENULL lowLimitPrice = new PRICENULL();
+    private final PRICENULL9 lowLimitPrice = new PRICENULL9();
 
-    public PRICENULL lowLimitPrice()
+    public PRICENULL9 lowLimitPrice()
     {
         lowLimitPrice.wrap(buffer, offset + 43, actingVersion);
         return lowLimitPrice;
@@ -482,9 +482,9 @@ public class SnapshotFullRefresh38
         return "";
     }
 
-    private final PRICENULL maxPriceVariation = new PRICENULL();
+    private final PRICENULL9 maxPriceVariation = new PRICENULL9();
 
-    public PRICENULL maxPriceVariation()
+    public PRICENULL9 maxPriceVariation()
     {
         maxPriceVariation.wrap(buffer, offset + 51, actingVersion);
         return maxPriceVariation;
@@ -513,7 +513,7 @@ public class SnapshotFullRefresh38
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private SnapshotFullRefresh38 parentMessage;
+        private SnapshotFullRefresh52 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -522,7 +522,7 @@ public class SnapshotFullRefresh38
         private int offset;
 
         public void wrapForDecode(
-            final SnapshotFullRefresh38 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final SnapshotFullRefresh52 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -534,7 +534,7 @@ public class SnapshotFullRefresh38
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final SnapshotFullRefresh38 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final SnapshotFullRefresh52 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -618,9 +618,9 @@ public class SnapshotFullRefresh38
             return "";
         }
 
-        private final PRICENULL mDEntryPx = new PRICENULL();
+        private final PRICENULL9 mDEntryPx = new PRICENULL9();
 
-        public PRICENULL mDEntryPx()
+        public PRICENULL9 mDEntryPx()
         {
             mDEntryPx.wrap(buffer, offset + 0, actingVersion);
             return mDEntryPx;

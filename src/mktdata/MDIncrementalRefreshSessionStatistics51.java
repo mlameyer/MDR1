@@ -3,14 +3,14 @@ package mktdata;
 
 import uk.co.real_logic.sbe.codec.java.*;
 
-public class MDIncrementalRefreshSessionStatistics35
+public class MDIncrementalRefreshSessionStatistics51
 {
     public static final int BLOCK_LENGTH = 11;
-    public static final int TEMPLATE_ID = 35;
+    public static final int TEMPLATE_ID = 51;
     public static final int SCHEMA_ID = 1;
     public static final int SCHEMA_VERSION = 9;
 
-    private final MDIncrementalRefreshSessionStatistics35 parentMessage = this;
+    private final MDIncrementalRefreshSessionStatistics51 parentMessage = this;
     private DirectBuffer buffer;
     private int offset;
     private int limit;
@@ -47,7 +47,7 @@ public class MDIncrementalRefreshSessionStatistics35
         return offset;
     }
 
-    public MDIncrementalRefreshSessionStatistics35 wrapForEncode(final DirectBuffer buffer, final int offset)
+    public MDIncrementalRefreshSessionStatistics51 wrapForEncode(final DirectBuffer buffer, final int offset)
     {
         this.buffer = buffer;
         this.offset = offset;
@@ -58,7 +58,7 @@ public class MDIncrementalRefreshSessionStatistics35
         return this;
     }
 
-    public MDIncrementalRefreshSessionStatistics35 wrapForDecode(
+    public MDIncrementalRefreshSessionStatistics51 wrapForDecode(
         final DirectBuffer buffer, final int offset, final int actingBlockLength, final int actingVersion)
     {
         this.buffer = buffer;
@@ -123,7 +123,7 @@ public class MDIncrementalRefreshSessionStatistics35
         return CodecUtil.uint64Get(buffer, offset + 0, java.nio.ByteOrder.LITTLE_ENDIAN);
     }
 
-    public MDIncrementalRefreshSessionStatistics35 transactTime(final long value)
+    public MDIncrementalRefreshSessionStatistics51 transactTime(final long value)
     {
         CodecUtil.uint64Put(buffer, offset + 0, value, java.nio.ByteOrder.LITTLE_ENDIAN);
         return this;
@@ -177,7 +177,7 @@ public class MDIncrementalRefreshSessionStatistics35
     {
         private static final int HEADER_SIZE = 3;
         private final GroupSize dimensions = new GroupSize();
-        private MDIncrementalRefreshSessionStatistics35 parentMessage;
+        private MDIncrementalRefreshSessionStatistics51 parentMessage;
         private DirectBuffer buffer;
         private int blockLength;
         private int actingVersion;
@@ -186,7 +186,7 @@ public class MDIncrementalRefreshSessionStatistics35
         private int offset;
 
         public void wrapForDecode(
-            final MDIncrementalRefreshSessionStatistics35 parentMessage, final DirectBuffer buffer, final int actingVersion)
+            final MDIncrementalRefreshSessionStatistics51 parentMessage, final DirectBuffer buffer, final int actingVersion)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -198,7 +198,7 @@ public class MDIncrementalRefreshSessionStatistics35
             parentMessage.limit(parentMessage.limit() + HEADER_SIZE);
         }
 
-        public void wrapForEncode(final MDIncrementalRefreshSessionStatistics35 parentMessage, final DirectBuffer buffer, final int count)
+        public void wrapForEncode(final MDIncrementalRefreshSessionStatistics51 parentMessage, final DirectBuffer buffer, final int count)
         {
             this.parentMessage = parentMessage;
             this.buffer = buffer;
@@ -282,9 +282,9 @@ public class MDIncrementalRefreshSessionStatistics35
             return "";
         }
 
-        private final PRICE mDEntryPx = new PRICE();
+        private final PRICE9 mDEntryPx = new PRICE9();
 
-        public PRICE mDEntryPx()
+        public PRICE9 mDEntryPx()
         {
             mDEntryPx.wrap(buffer, offset + 0, actingVersion);
             return mDEntryPx;
@@ -494,11 +494,6 @@ public class MDIncrementalRefreshSessionStatistics35
 
         public int mDEntrySize()
         {
-            if (actingVersion < 8)
-            {
-                return 2147483647;
-            }
-
             return CodecUtil.int32Get(buffer, offset + 19, java.nio.ByteOrder.LITTLE_ENDIAN);
         }
 
